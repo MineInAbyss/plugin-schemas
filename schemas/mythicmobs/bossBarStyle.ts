@@ -1,0 +1,7 @@
+export enum BossBarStyle {
+    SOLID = "SOLID",
+    SEGMENTED_6 = "SEGMENTED_6",
+    SEGMENTED_10 = "SEGMENTED_10",
+    SEGMENTED_12 = "SEGMENTED_12",
+    SEGMENTED_20 = "SEGMENTED_20",
+}

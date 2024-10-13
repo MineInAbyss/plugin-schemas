@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "typescript-json-schema": "npm:typescript-json-schema@^0.65.1"
+  }
+}
