@@ -179,7 +179,183 @@ class Base {
     "mineinabyss:okiboTraveler"?: mineinabyss$okibo_traveler;
     "mineinabyss:cosmetics"?: mineinabyss$cosmetics;
 }
-
+class BaseOrString {
+    "entity"?: geary$entity | string;
+    "uuid"?: geary$uuid | string;
+    "location"?: geary$location | string;
+    "itemRightClickBlock"?: geary$item_right_click_block | string;
+    "bucketable"?: geary$bucketable | string;
+    "tamed"?: geary$tamed | string;
+    "become"?: geary$become | string;
+    "holdsPrefab"?: geary$holds_prefab | string;
+    "set.block"?: geary$set$block | string;
+    "onDamageOther"?: geary$on_damage_other | string;
+    "prevent.riding"?: geary$prevent$riding | string;
+    "getTargetBlock"?: geary$get_target_block | string;
+    "when"?: geary$when | string;
+    "actionGroup"?: geary$action_group | string;
+    "backpack"?: geary$backpack | string;
+    "displayName"?: geary$display_name | string;
+    "itemRightClick"?: geary$item_right_click | string;
+    "copyToInstances"?: geary$copy_to_instances | string;
+    "mythicConditions"?: geary$mythic_conditions | string;
+    "smite"?: geary$smite | string;
+    "onSheared"?: geary$on_sheared | string;
+    "cooldownsComplete"?: geary$cooldowns_complete | string;
+    "prefabKey"?: geary$prefab_key | string;
+    "itemRightClickEntity"?: geary$item_right_click_entity | string;
+    "onFail"?: geary$on_fail | string;
+    "cooldowns"?: geary$cooldowns | string;
+    "child"?: geary$child | string;
+    "itemConsumed"?: geary$item_consumed | string;
+    "children"?: geary$children | string;
+    "denyInVanillaRecipes"?: geary$deny_in_vanilla_recipes | string;
+    "itemInteract"?: geary$item_interact | string;
+    "observe"?: geary$observe | string;
+    "prevent.interaction"?: geary$prevent$interaction | string;
+    "spawnCategory"?: geary$spawn_category | string;
+    "bind.entityType"?: geary$bind$entity_type | string;
+    "sendActionBar"?: geary$send_action_bar | string;
+    "maxNearby"?: geary$max_nearby | string;
+    "hasConsumable"?: geary$has_consumable | string;
+    "itemDrop"?: geary$item_drop | string;
+    "onLoad"?: geary$on_load | string;
+    "playSound"?: geary$play_sound | string;
+    "spawnType"?: geary$spawn_type | string;
+    "gap"?: geary$gap | string;
+    "eval"?: geary$eval | string;
+    "set.potionMixes"?: geary$set$potion_mixes | string;
+    "replaceBurnedDrop"?: geary$replace_burned_drop | string;
+    "backpackContents"?: geary$backpack_contents | string;
+    "blockBelow"?: geary$block_below | string;
+    "with"?: geary$with | string;
+    "hat"?: geary$hat | string;
+    "itemLeftClickBlock"?: geary$item_left_click_block | string;
+    "tamable"?: geary$tamable | string;
+    "isSourceLiquid"?: geary$is_source_liquid | string;
+    "startCooldown"?: geary$start_cooldown | string;
+    "block"?: geary$block | string;
+    "check.entity"?: geary$check$entity | string;
+    "onDamaged"?: geary$on_damaged | string;
+    "prevent.breeding"?: geary$prevent$breeding | string;
+    "onDeath"?: geary$on_death | string;
+    "blockAbove"?: geary$block_above | string;
+    "ensure"?: geary$ensure | string;
+    "sounds"?: geary$sounds | string;
+    "resourcepack"?: geary$resourcepack | string;
+    "set.item"?: geary$set$item | string;
+    "player"?: geary$player | string;
+    "relation"?: geary$relation | string;
+    "consumeItem"?: geary$consume_item | string;
+    "sound"?: geary$sound | string;
+    "getLocation"?: geary$get_location | string;
+    "particle"?: geary$particle | string;
+    "itemLeftClick"?: geary$item_left_click | string;
+    "itemBreak"?: geary$item_break | string;
+    "instances"?: geary$instances | string;
+    "passive"?: geary$passive | string;
+    "inherit"?: geary$inherit | string;
+    "explode"?: geary$explode | string;
+    "disableItemInteractions"?: geary$disable_item_interactions | string;
+    "chance"?: geary$chance | string;
+    "set.mythicMob"?: geary$set$mythic_mob | string;
+    "onSpawn"?: geary$on_spawn | string;
+    "getNearbyEntities"?: geary$get_nearby_entities | string;
+    "set.entityType"?: geary$set$entity_type | string;
+    "prevent.regeneration"?: geary$prevent$regeneration | string;
+    "applyPotionEffects"?: geary$apply_potion_effects | string;
+    "mythicSkills"?: geary$mythic_skills | string;
+    "set.recipes"?: geary$set$recipes | string;
+    "inInventory"?: geary$in_inventory | string;
+    "blocky:sound"?: blocky$sound | string;
+    "blocky:preventItemstackUpdate"?: blocky$prevent_itemstack_update | string;
+    "blocky:pack"?: blocky$pack | string;
+    "blocky:info"?: blocky$info | string;
+    "blocky:light"?: blocky$light | string;
+    "blocky:collisionHitbox"?: blocky$collision_hitbox | string;
+    "blocky:furnitureColor"?: blocky$furniture_color | string;
+    "blocky:directional"?: blocky$directional | string;
+    "blocky:modifier"?: blocky$modifier | string;
+    "blocky:vanillaNoteBlock"?: blocky$vanilla_note_block | string;
+    "blocky:modelengine"?: blocky$modelengine | string;
+    "blocky:placableOn"?: blocky$placable_on | string;
+    "blocky:burnable"?: blocky$burnable | string;
+    "blocky:furniture"?: blocky$furniture | string;
+    "blocky:mining"?: blocky$mining | string;
+    "blocky:waxedCopperBlock"?: blocky$waxed_copper_block | string;
+    "blocky:drops"?: blocky$drops | string;
+    "blocky:associatedSeats"?: blocky$associated_seats | string;
+    "blocky:interactionHitbox"?: blocky$interaction_hitbox | string;
+    "blocky:instrument"?: blocky$instrument | string;
+    "blocky:furnitureProperties"?: blocky$furniture_properties | string;
+    "blocky:breaking"?: blocky$breaking | string;
+    "blocky:seats"?: blocky$seats | string;
+    "blocky:tallWire"?: blocky$tall_wire | string;
+    "packy:packyData"?: packy$packy_data | string;
+    "packy:templates"?: packy$templates | string;
+    "chatty:commandSpy"?: chatty$command_spy | string;
+    "chatty:chattyData"?: chatty$chatty_data | string;
+    "chatty:spyOnChannels"?: chatty$spy_on_channels | string;
+    "chatty:hideJoinLeave"?: chatty$hide_join_leave | string;
+    "chatty:nickname"?: chatty$nickname | string;
+    "climb:staminaModifier"?: climb$stamina_modifier | string;
+    "bonfire:bonfireRemoved"?: bonfire$bonfire_removed | string;
+    "bonfire:effectArea"?: bonfire$effect_area | string;
+    "bonfire:bonfireRespawn"?: bonfire$bonfire_respawn | string;
+    "bonfire:bonfire"?: bonfire$bonfire | string;
+    "bonfire:expirationTime"?: bonfire$expiration_time | string;
+    "bonfire:bonfireDebug"?: bonfire$bonfire_debug | string;
+    "minecraft:constant"?: minecraft$constant | string;
+    "mineinabyss:showDepthmeterHud"?: mineinabyss$show_depthmeter_hud | string;
+    "mineinabyss:toggleDepthHud"?: mineinabyss$toggle_depth_hud | string;
+    "mineinabyss:sickle"?: mineinabyss$sickle | string;
+    "mineinabyss:patreonItem"?: mineinabyss$patreon_item | string;
+    "mineinabyss:okibotravel"?: mineinabyss$okibotravel | string;
+    "mineinabyss:okiboMapHitbox"?: mineinabyss$okibo_map_hitbox | string;
+    "mineinabyss:lockable"?: mineinabyss$lockable | string;
+    "mineinabyss:lootLocation"?: mineinabyss$loot_location | string;
+    "mineinabyss:bird"?: mineinabyss$bird | string;
+    "mineinabyss:unlockedGondolas"?: mineinabyss$unlocked_gondolas | string;
+    "mineinabyss:insect"?: mineinabyss$insect | string;
+    "mineinabyss:depthmeter"?: mineinabyss$depthmeter | string;
+    "mineinabyss:playerProfile"?: mineinabyss$player_profile | string;
+    "mineinabyss:orthbound"?: mineinabyss$orthbound | string;
+    "mineinabyss:orthbanker"?: mineinabyss$orthbanker | string;
+    "mineinabyss:grapplingHook"?: mineinabyss$grappling_hook | string;
+    "mineinabyss:signOwner"?: mineinabyss$sign_owner | string;
+    "mineinabyss:patreon"?: mineinabyss$patreon | string;
+    "minecraft:setCount"?: minecraft$set_count | string;
+    "minecraft:group"?: minecraft$group | string;
+    "mineinabyss:starcompass"?: mineinabyss$starcompass | string;
+    "mineinabyss:tutorialEntity"?: mineinabyss$tutorial_entity | string;
+    "mineinabyss:containsLoot"?: mineinabyss$contains_loot | string;
+    "mineinabyss:okiboMap"?: mineinabyss$okibo_map | string;
+    "mineinabyss:backpack"?: mineinabyss$backpack | string;
+    "mineinabyss:okiboLineStation"?: mineinabyss$okibo_line_station | string;
+    "minecraft:uniform"?: minecraft$uniform | string;
+    "mineinabyss:spyOnGuildChat"?: mineinabyss$spy_on_guild_chat | string;
+    "mineinabyss:toggleStarcompassHud"?: mineinabyss$toggle_starcompass_hud | string;
+    "mineinabyss:guildmaster"?: mineinabyss$guildmaster | string;
+    "mineinabyss:splitjaw"?: mineinabyss$splitjaw | string;
+    "mineinabyss:shopkeeper"?: mineinabyss$shopkeeper | string;
+    "mineinabyss:removeInOrth"?: mineinabyss$remove_in_orth | string;
+    "mineinabyss:lootTable"?: mineinabyss$loot_table | string;
+    "mineinabyss:item"?: mineinabyss$item | string;
+    "minecraft:randomChance"?: minecraft$random_chance | string;
+    "minecraft:item"?: minecraft$item | string;
+    "mineinabyss:descentContext"?: mineinabyss$descent_context | string;
+    "mineinabyss:customHudData"?: mineinabyss$custom_hud_data | string;
+    "mineinabyss:playerData"?: mineinabyss$player_data | string;
+    "cosmetics:equippedBackpackStorage"?: cosmetics$equipped_backpack_storage | string;
+    "mineinabyss:showStarcompassHud"?: mineinabyss$show_starcompass_hud | string;
+    "minecraft:binomial"?: minecraft$binomial | string;
+    "mineinabyss:showDepth"?: mineinabyss$show_depth | string;
+    "mineinabyss:gondola"?: mineinabyss$gondola | string;
+    "mineinabyss:mittytoken"?: mineinabyss$mittytoken | string;
+    "mineinabyss:orthcoin"?: mineinabyss$orthcoin | string;
+    "mineinabyss:okiboTraveler"?: mineinabyss$okibo_traveler | string;
+    "mineinabyss:cosmetics"?: mineinabyss$cosmetics | string;
+}
 type BaseSerializableItemStack = SerializableItemStack | string;
 
 export interface SerializableItemStack {
@@ -274,6 +450,8 @@ export interface PotionEffect {
     hasParticles?: boolean;
     hasIcon?: boolean;
 }
+
+
 
 export type IngredientOption =
     | IngredientOption.damage
@@ -2412,7 +2590,7 @@ export interface geary$deny_in_vanilla_recipes {
 export interface geary$item_interact {
 }
 
-export type geary$observe = { [key: string]: Base[] };
+export type geary$observe = { [key: string]: ActionBase[] };
 
 export interface geary$prevent$interaction {
     type?: InteractionType[];
@@ -2480,7 +2658,7 @@ export interface geary$block_below {
     deny?: string[];
 }
 
-export type geary$with = Base;
+export type geary$with = BaseOrString;
 
 export interface geary$hat {
     sound?: Sound;
@@ -4908,9 +5086,9 @@ export type Roll =
 
 export namespace Roll {
     export enum Type {
-        minecraft$binomial = "minecraft$binomial",
-        minecraft$constant = "minecraft$constant",
-        minecraft$uniform = "minecraft$uniform",
+        minecraft$binomial = "minecraft:binomial",
+        minecraft$constant = "minecraft:constant",
+        minecraft$uniform = "minecraft:uniform",
     }
 
     export interface minecraft$binomial {
@@ -4936,7 +5114,7 @@ export type LootCondition =
 
 export namespace LootCondition {
     export enum Type {
-        minecraft$random_chance = "minecraft$random_chance",
+        minecraft$random_chance = "minecraft:random_chance",
     }
 
     export interface minecraft$random_chance {
@@ -4957,7 +5135,7 @@ export type LootFunction =
 
 export namespace LootFunction {
     export enum Type {
-        minecraft$set_count = "minecraft$set_count",
+        minecraft$set_count = "minecraft:set_count",
     }
 
     export interface minecraft$set_count {
@@ -4974,9 +5152,9 @@ export type LootEntry =
 
 export namespace LootEntry {
     export enum Type {
-        minecraft$group = "minecraft$group",
-        mineinabyss$item = "mineinabyss$item",
-        minecraft$item = "minecraft$item",
+        minecraft$group = "minecraft:group",
+        mineinabyss$item = "mineinabyss:item",
+        minecraft$item = "minecraft:item",
     }
 
     export interface minecraft$group {
@@ -5200,4 +5378,8 @@ export interface mineinabyss$okibo_traveler {
 export interface mineinabyss$cosmetics {
     gesture?: string;
     cosmeticBackpack?: string | null;
+}
+class ActionBase extends Base {
+    register?: string;
+    loop?: string;
 }

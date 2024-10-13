@@ -2724,13 +2724,7 @@
           "$ref": "#/definitions/geary$item_interact"
         },
         "observe": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/Base"
-            }
-          }
+          "$ref": "#/definitions/geary$observe"
         },
         "prevent.interaction": {
           "$ref": "#/definitions/geary$prevent$interaction"
@@ -2784,7 +2778,7 @@
           "$ref": "#/definitions/geary$block_below"
         },
         "with": {
-          "$ref": "#/definitions/Base"
+          "$ref": "#/definitions/BaseOrString"
         },
         "hat": {
           "$ref": "#/definitions/geary$hat"
@@ -3278,6 +3272,585 @@
       "type": "object",
       "additionalProperties": false
     },
+    "ActionBase": {
+      "type": "object",
+      "properties": {
+        "register": {
+          "type": "string"
+        },
+        "loop": {
+          "type": "string"
+        },
+        "entity": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/geary$location"
+        },
+        "itemRightClickBlock": {
+          "$ref": "#/definitions/geary$item_right_click_block"
+        },
+        "bucketable": {
+          "$ref": "#/definitions/geary$bucketable"
+        },
+        "tamed": {
+          "$ref": "#/definitions/geary$tamed"
+        },
+        "become": {
+          "type": "string"
+        },
+        "holdsPrefab": {
+          "$ref": "#/definitions/geary$holds_prefab"
+        },
+        "set.block": {
+          "$ref": "#/definitions/geary$set$block"
+        },
+        "onDamageOther": {},
+        "prevent.riding": {
+          "$ref": "#/definitions/geary$prevent$riding"
+        },
+        "getTargetBlock": {
+          "$ref": "#/definitions/geary$get_target_block"
+        },
+        "when": {
+          "$ref": "#/definitions/geary$when"
+        },
+        "actionGroup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Base"
+          }
+        },
+        "backpack": {
+          "$ref": "#/definitions/geary$backpack"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "itemRightClick": {
+          "$ref": "#/definitions/geary$item_right_click"
+        },
+        "copyToInstances": {
+          "$ref": "#/definitions/geary$copy_to_instances"
+        },
+        "mythicConditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smite": {
+          "$ref": "#/definitions/geary$smite"
+        },
+        "onSheared": {
+          "$ref": "#/definitions/geary$on_sheared"
+        },
+        "cooldownsComplete": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefabKey": {
+          "type": "string"
+        },
+        "itemRightClickEntity": {
+          "$ref": "#/definitions/geary$item_right_click_entity"
+        },
+        "onFail": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Base"
+          }
+        },
+        "cooldowns": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/StartedCooldown"
+          }
+        },
+        "child": {
+          "type": "array",
+          "items": {}
+        },
+        "itemConsumed": {},
+        "children": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Base"
+          }
+        },
+        "denyInVanillaRecipes": {
+          "$ref": "#/definitions/geary$deny_in_vanilla_recipes"
+        },
+        "itemInteract": {
+          "$ref": "#/definitions/geary$item_interact"
+        },
+        "observe": {
+          "$ref": "#/definitions/geary$observe"
+        },
+        "prevent.interaction": {
+          "$ref": "#/definitions/geary$prevent$interaction"
+        },
+        "spawnCategory": {
+          "type": "string"
+        },
+        "bind.entityType": {
+          "type": "string"
+        },
+        "sendActionBar": {
+          "$ref": "#/definitions/geary$send_action_bar"
+        },
+        "maxNearby": {
+          "$ref": "#/definitions/geary$max_nearby"
+        },
+        "hasConsumable": {
+          "$ref": "#/definitions/geary$has_consumable"
+        },
+        "itemDrop": {},
+        "onLoad": {},
+        "playSound": {
+          "$ref": "#/definitions/geary$play_sound"
+        },
+        "spawnType": {
+          "type": "string"
+        },
+        "gap": {
+          "type": "string"
+        },
+        "eval": {
+          "type": "string"
+        },
+        "set.potionMixes": {
+          "$ref": "#/definitions/geary$set$potion_mixes"
+        },
+        "replaceBurnedDrop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SerializableItemStack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "backpackContents": {
+          "$ref": "#/definitions/geary$backpack_contents"
+        },
+        "blockBelow": {
+          "$ref": "#/definitions/geary$block_below"
+        },
+        "with": {
+          "$ref": "#/definitions/BaseOrString"
+        },
+        "hat": {
+          "$ref": "#/definitions/geary$hat"
+        },
+        "itemLeftClickBlock": {
+          "$ref": "#/definitions/geary$item_left_click_block"
+        },
+        "tamable": {
+          "$ref": "#/definitions/geary$tamable"
+        },
+        "isSourceLiquid": {
+          "$ref": "#/definitions/geary$is_source_liquid"
+        },
+        "startCooldown": {
+          "$ref": "#/definitions/geary$start_cooldown"
+        },
+        "block": {
+          "$ref": "#/definitions/geary$block"
+        },
+        "check.entity": {
+          "$ref": "#/definitions/geary$check$entity"
+        },
+        "onDamaged": {},
+        "prevent.breeding": {
+          "$ref": "#/definitions/geary$prevent$breeding"
+        },
+        "onDeath": {
+          "$ref": "#/definitions/geary$on_death"
+        },
+        "blockAbove": {
+          "$ref": "#/definitions/geary$block_above"
+        },
+        "ensure": {
+          "$ref": "#/definitions/Base"
+        },
+        "sounds": {
+          "$ref": "#/definitions/geary$sounds"
+        },
+        "resourcepack": {
+          "$ref": "#/definitions/geary$resourcepack"
+        },
+        "set.item": {
+          "$ref": "#/definitions/geary$set$item"
+        },
+        "player": {
+          "$ref": "#/definitions/geary$player"
+        },
+        "relation": {
+          "$ref": "#/definitions/geary$relation"
+        },
+        "consumeItem": {
+          "$ref": "#/definitions/geary$consume_item"
+        },
+        "sound": {
+          "$ref": "#/definitions/geary$sound"
+        },
+        "getLocation": {
+          "$ref": "#/definitions/geary$get_location"
+        },
+        "particle": {
+          "$ref": "#/definitions/geary$particle"
+        },
+        "itemLeftClick": {
+          "$ref": "#/definitions/geary$item_left_click"
+        },
+        "itemBreak": {},
+        "instances": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Base"
+          }
+        },
+        "passive": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SystemBind"
+          }
+        },
+        "inherit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explode": {
+          "$ref": "#/definitions/geary$explode"
+        },
+        "disableItemInteractions": {
+          "$ref": "#/definitions/geary$disable_item_interactions"
+        },
+        "chance": {
+          "type": "number"
+        },
+        "set.mythicMob": {
+          "type": "string"
+        },
+        "onSpawn": {},
+        "getNearbyEntities": {
+          "$ref": "#/definitions/geary$get_nearby_entities"
+        },
+        "set.entityType": {
+          "type": "string"
+        },
+        "prevent.regeneration": {
+          "$ref": "#/definitions/geary$prevent$regeneration"
+        },
+        "applyPotionEffects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PotionEffect"
+          }
+        },
+        "mythicSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "set.recipes": {
+          "$ref": "#/definitions/geary$set$recipes"
+        },
+        "inInventory": {
+          "$ref": "#/definitions/geary$in_inventory"
+        },
+        "blocky:sound": {
+          "$ref": "#/definitions/blocky$sound"
+        },
+        "blocky:preventItemstackUpdate": {
+          "$ref": "#/definitions/blocky$prevent_itemstack_update"
+        },
+        "blocky:pack": {
+          "$ref": "#/definitions/blocky$pack"
+        },
+        "blocky:info": {
+          "$ref": "#/definitions/blocky$info"
+        },
+        "blocky:light": {
+          "type": "number"
+        },
+        "blocky:collisionHitbox": {
+          "$ref": "#/definitions/BlockLocation"
+        },
+        "blocky:furnitureColor": {
+          "$ref": "#/definitions/blocky$furniture_color"
+        },
+        "blocky:directional": {
+          "$ref": "#/definitions/blocky$directional"
+        },
+        "blocky:modifier": {
+          "$ref": "#/definitions/blocky$modifier"
+        },
+        "blocky:vanillaNoteBlock": {
+          "$ref": "#/definitions/blocky$vanilla_note_block"
+        },
+        "blocky:modelengine": {
+          "$ref": "#/definitions/blocky$modelengine"
+        },
+        "blocky:placableOn": {
+          "$ref": "#/definitions/blocky$placable_on"
+        },
+        "blocky:burnable": {
+          "$ref": "#/definitions/blocky$burnable"
+        },
+        "blocky:furniture": {
+          "$ref": "#/definitions/blocky$furniture"
+        },
+        "blocky:mining": {
+          "$ref": "#/definitions/blocky$mining"
+        },
+        "blocky:waxedCopperBlock": {
+          "$ref": "#/definitions/blocky$waxed_copper_block"
+        },
+        "blocky:drops": {
+          "$ref": "#/definitions/blocky$drops"
+        },
+        "blocky:associatedSeats": {
+          "$ref": "#/definitions/blocky$associated_seats"
+        },
+        "blocky:interactionHitbox": {
+          "$ref": "#/definitions/blocky$interaction_hitbox"
+        },
+        "blocky:instrument": {
+          "$ref": "#/definitions/blocky$instrument"
+        },
+        "blocky:furnitureProperties": {
+          "$ref": "#/definitions/blocky$furniture_properties"
+        },
+        "blocky:breaking": {
+          "$ref": "#/definitions/blocky$breaking"
+        },
+        "blocky:seats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Vector"
+          }
+        },
+        "blocky:tallWire": {
+          "$ref": "#/definitions/blocky$tall_wire"
+        },
+        "packy:packyData": {
+          "$ref": "#/definitions/packy$packy_data"
+        },
+        "packy:templates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/PackyTemplate"
+          }
+        },
+        "chatty:commandSpy": {
+          "$ref": "#/definitions/chatty$command_spy"
+        },
+        "chatty:chattyData": {
+          "$ref": "#/definitions/chatty$chatty_data"
+        },
+        "chatty:spyOnChannels": {
+          "$ref": "#/definitions/chatty$spy_on_channels"
+        },
+        "chatty:hideJoinLeave": {
+          "$ref": "#/definitions/chatty$hide_join_leave"
+        },
+        "chatty:nickname": {
+          "$ref": "#/definitions/chatty$nickname"
+        },
+        "climb:staminaModifier": {
+          "$ref": "#/definitions/climb$stamina_modifier"
+        },
+        "bonfire:bonfireRemoved": {
+          "$ref": "#/definitions/bonfire$bonfire_removed"
+        },
+        "bonfire:effectArea": {
+          "$ref": "#/definitions/bonfire$effect_area"
+        },
+        "bonfire:bonfireRespawn": {
+          "$ref": "#/definitions/bonfire$bonfire_respawn"
+        },
+        "bonfire:bonfire": {
+          "$ref": "#/definitions/bonfire$bonfire"
+        },
+        "bonfire:expirationTime": {
+          "$ref": "#/definitions/bonfire$expiration_time"
+        },
+        "bonfire:bonfireDebug": {
+          "$ref": "#/definitions/bonfire$bonfire_debug"
+        },
+        "minecraft:constant": {
+          "$ref": "#/definitions/minecraft$constant"
+        },
+        "mineinabyss:showDepthmeterHud": {
+          "$ref": "#/definitions/mineinabyss$show_depthmeter_hud"
+        },
+        "mineinabyss:toggleDepthHud": {
+          "$ref": "#/definitions/mineinabyss$toggle_depth_hud"
+        },
+        "mineinabyss:sickle": {
+          "$ref": "#/definitions/mineinabyss$sickle"
+        },
+        "mineinabyss:patreonItem": {
+          "$ref": "#/definitions/mineinabyss$patreon_item"
+        },
+        "mineinabyss:okibotravel": {
+          "$ref": "#/definitions/mineinabyss$okibotravel"
+        },
+        "mineinabyss:okiboMapHitbox": {
+          "$ref": "#/definitions/mineinabyss$okibo_map_hitbox"
+        },
+        "mineinabyss:lockable": {
+          "$ref": "#/definitions/mineinabyss$lockable"
+        },
+        "mineinabyss:lootLocation": {
+          "$ref": "#/definitions/mineinabyss$loot_location"
+        },
+        "mineinabyss:bird": {
+          "$ref": "#/definitions/mineinabyss$bird"
+        },
+        "mineinabyss:unlockedGondolas": {
+          "$ref": "#/definitions/mineinabyss$unlocked_gondolas"
+        },
+        "mineinabyss:insect": {
+          "$ref": "#/definitions/mineinabyss$insect"
+        },
+        "mineinabyss:depthmeter": {
+          "$ref": "#/definitions/mineinabyss$depthmeter"
+        },
+        "mineinabyss:playerProfile": {
+          "$ref": "#/definitions/mineinabyss$player_profile"
+        },
+        "mineinabyss:orthbound": {
+          "$ref": "#/definitions/mineinabyss$orthbound"
+        },
+        "mineinabyss:orthbanker": {
+          "$ref": "#/definitions/mineinabyss$orthbanker"
+        },
+        "mineinabyss:grapplingHook": {
+          "$ref": "#/definitions/mineinabyss$grappling_hook"
+        },
+        "mineinabyss:signOwner": {
+          "$ref": "#/definitions/mineinabyss$sign_owner"
+        },
+        "mineinabyss:patreon": {
+          "$ref": "#/definitions/mineinabyss$patreon"
+        },
+        "minecraft:setCount": {
+          "$ref": "#/definitions/minecraft$set_count"
+        },
+        "minecraft:group": {
+          "$ref": "#/definitions/minecraft$group"
+        },
+        "mineinabyss:starcompass": {
+          "$ref": "#/definitions/mineinabyss$starcompass"
+        },
+        "mineinabyss:tutorialEntity": {
+          "$ref": "#/definitions/mineinabyss$tutorial_entity"
+        },
+        "mineinabyss:containsLoot": {
+          "$ref": "#/definitions/mineinabyss$contains_loot"
+        },
+        "mineinabyss:okiboMap": {
+          "$ref": "#/definitions/mineinabyss$okibo_map"
+        },
+        "mineinabyss:backpack": {
+          "$ref": "#/definitions/mineinabyss$backpack"
+        },
+        "mineinabyss:okiboLineStation": {
+          "$ref": "#/definitions/mineinabyss$okibo_line_station"
+        },
+        "minecraft:uniform": {
+          "$ref": "#/definitions/minecraft$uniform"
+        },
+        "mineinabyss:spyOnGuildChat": {
+          "$ref": "#/definitions/mineinabyss$spy_on_guild_chat"
+        },
+        "mineinabyss:toggleStarcompassHud": {
+          "$ref": "#/definitions/mineinabyss$toggle_starcompass_hud"
+        },
+        "mineinabyss:guildmaster": {
+          "$ref": "#/definitions/mineinabyss$guildmaster"
+        },
+        "mineinabyss:splitjaw": {
+          "$ref": "#/definitions/mineinabyss$splitjaw"
+        },
+        "mineinabyss:shopkeeper": {
+          "$ref": "#/definitions/mineinabyss$shopkeeper"
+        },
+        "mineinabyss:removeInOrth": {
+          "$ref": "#/definitions/mineinabyss$remove_in_orth"
+        },
+        "mineinabyss:lootTable": {
+          "$ref": "#/definitions/mineinabyss$loot_table"
+        },
+        "mineinabyss:item": {
+          "$ref": "#/definitions/mineinabyss$item"
+        },
+        "minecraft:randomChance": {
+          "$ref": "#/definitions/minecraft$random_chance"
+        },
+        "minecraft:item": {
+          "$ref": "#/definitions/minecraft$item"
+        },
+        "mineinabyss:descentContext": {
+          "$ref": "#/definitions/mineinabyss$descent_context"
+        },
+        "mineinabyss:customHudData": {
+          "$ref": "#/definitions/mineinabyss$custom_hud_data"
+        },
+        "mineinabyss:playerData": {
+          "$ref": "#/definitions/mineinabyss$player_data"
+        },
+        "cosmetics:equippedBackpackStorage": {
+          "$ref": "#/definitions/cosmetics$equipped_backpack_storage"
+        },
+        "mineinabyss:showStarcompassHud": {
+          "$ref": "#/definitions/mineinabyss$show_starcompass_hud"
+        },
+        "minecraft:binomial": {
+          "$ref": "#/definitions/minecraft$binomial"
+        },
+        "mineinabyss:showDepth": {
+          "$ref": "#/definitions/mineinabyss$show_depth"
+        },
+        "mineinabyss:gondola": {
+          "$ref": "#/definitions/mineinabyss$gondola"
+        },
+        "mineinabyss:mittytoken": {
+          "$ref": "#/definitions/mineinabyss$mittytoken"
+        },
+        "mineinabyss:orthcoin": {
+          "$ref": "#/definitions/mineinabyss$orthcoin"
+        },
+        "mineinabyss:okiboTraveler": {
+          "$ref": "#/definitions/mineinabyss$okibo_traveler"
+        },
+        "mineinabyss:cosmetics": {
+          "$ref": "#/definitions/mineinabyss$cosmetics"
+        }
+      },
+      "additionalProperties": false
+    },
+    "geary$observe": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ActionBase"
+        }
+      }
+    },
     "geary$prevent$interaction": {
       "type": "object",
       "properties": {
@@ -3424,6 +3997,1647 @@
           "items": {
             "type": "string"
           }
+        }
+      },
+      "additionalProperties": false
+    },
+    "BaseOrString": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$location"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemRightClickBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_right_click_block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bucketable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$bucketable"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "tamed": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$tamed"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "become": {
+          "type": "string"
+        },
+        "holdsPrefab": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$holds_prefab"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "set.block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$set$block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "onDamageOther": {},
+        "prevent.riding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$prevent$riding"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "getTargetBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$get_target_block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "when": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$when"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "actionGroup": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Base"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "backpack": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$backpack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "itemRightClick": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_right_click"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "copyToInstances": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$copy_to_instances"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mythicConditions": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "smite": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$smite"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "onSheared": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$on_sheared"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "cooldownsComplete": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "prefabKey": {
+          "type": "string"
+        },
+        "itemRightClickEntity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_right_click_entity"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "onFail": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Base"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "cooldowns": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/StartedCooldown"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "child": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {}
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemConsumed": {},
+        "children": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/Base"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "denyInVanillaRecipes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$deny_in_vanilla_recipes"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemInteract": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_interact"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "observe": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$observe"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "prevent.interaction": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$prevent$interaction"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "spawnCategory": {
+          "type": "string"
+        },
+        "bind.entityType": {
+          "type": "string"
+        },
+        "sendActionBar": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$send_action_bar"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "maxNearby": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$max_nearby"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "hasConsumable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$has_consumable"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemDrop": {},
+        "onLoad": {},
+        "playSound": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$play_sound"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "spawnType": {
+          "type": "string"
+        },
+        "gap": {
+          "type": "string"
+        },
+        "eval": {
+          "type": "string"
+        },
+        "set.potionMixes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$set$potion_mixes"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "replaceBurnedDrop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SerializableItemStack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "backpackContents": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$backpack_contents"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blockBelow": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$block_below"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "with": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/BaseOrString"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "hat": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$hat"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemLeftClickBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_left_click_block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "tamable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$tamable"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "isSourceLiquid": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$is_source_liquid"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "startCooldown": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$start_cooldown"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "check.entity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$check$entity"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "onDamaged": {},
+        "prevent.breeding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$prevent$breeding"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "onDeath": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$on_death"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blockAbove": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$block_above"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "ensure": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Base"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "sounds": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$sounds"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "resourcepack": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$resourcepack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "set.item": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$set$item"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "player": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$player"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "relation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$relation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "consumeItem": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$consume_item"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "sound": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$sound"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "getLocation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$get_location"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "particle": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$particle"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemLeftClick": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$item_left_click"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "itemBreak": {},
+        "instances": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/Base"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "passive": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SystemBind"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "inherit": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "explode": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$explode"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "disableItemInteractions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$disable_item_interactions"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chance": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "set.mythicMob": {
+          "type": "string"
+        },
+        "onSpawn": {},
+        "getNearbyEntities": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$get_nearby_entities"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "set.entityType": {
+          "type": "string"
+        },
+        "prevent.regeneration": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$prevent$regeneration"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "applyPotionEffects": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PotionEffect"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mythicSkills": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "set.recipes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$set$recipes"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "inInventory": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/geary$in_inventory"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:sound": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$sound"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:preventItemstackUpdate": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$prevent_itemstack_update"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:pack": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$pack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:info": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$info"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:light": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "blocky:collisionHitbox": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/BlockLocation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:furnitureColor": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$furniture_color"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:directional": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$directional"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:modifier": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$modifier"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:vanillaNoteBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$vanilla_note_block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:modelengine": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$modelengine"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:placableOn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$placable_on"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:burnable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$burnable"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:furniture": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$furniture"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:mining": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$mining"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:waxedCopperBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$waxed_copper_block"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:drops": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$drops"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:associatedSeats": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$associated_seats"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:interactionHitbox": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$interaction_hitbox"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:instrument": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$instrument"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:furnitureProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$furniture_properties"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:breaking": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$breaking"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:seats": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Vector"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "blocky:tallWire": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/blocky$tall_wire"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "packy:packyData": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/packy$packy_data"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "packy:templates": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/PackyTemplate"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chatty:commandSpy": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/chatty$command_spy"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chatty:chattyData": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/chatty$chatty_data"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chatty:spyOnChannels": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/chatty$spy_on_channels"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chatty:hideJoinLeave": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/chatty$hide_join_leave"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "chatty:nickname": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/chatty$nickname"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "climb:staminaModifier": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/climb$stamina_modifier"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:bonfireRemoved": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$bonfire_removed"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:effectArea": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$effect_area"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:bonfireRespawn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$bonfire_respawn"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:bonfire": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$bonfire"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:expirationTime": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$expiration_time"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "bonfire:bonfireDebug": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/bonfire$bonfire_debug"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:constant": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$constant"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:showDepthmeterHud": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$show_depthmeter_hud"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:toggleDepthHud": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$toggle_depth_hud"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:sickle": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$sickle"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:patreonItem": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$patreon_item"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:okibotravel": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$okibotravel"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:okiboMapHitbox": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$okibo_map_hitbox"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:lockable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$lockable"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:lootLocation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$loot_location"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:bird": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$bird"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:unlockedGondolas": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$unlocked_gondolas"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:insect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$insect"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:depthmeter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$depthmeter"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:playerProfile": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$player_profile"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:orthbound": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$orthbound"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:orthbanker": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$orthbanker"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:grapplingHook": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$grappling_hook"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:signOwner": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$sign_owner"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:patreon": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$patreon"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:setCount": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$set_count"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:group": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$group"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:starcompass": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$starcompass"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:tutorialEntity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$tutorial_entity"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:containsLoot": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$contains_loot"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:okiboMap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$okibo_map"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:backpack": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$backpack"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:okiboLineStation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$okibo_line_station"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:uniform": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$uniform"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:spyOnGuildChat": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$spy_on_guild_chat"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:toggleStarcompassHud": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$toggle_starcompass_hud"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:guildmaster": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$guildmaster"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:splitjaw": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$splitjaw"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:shopkeeper": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$shopkeeper"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:removeInOrth": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$remove_in_orth"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:lootTable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$loot_table"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:item": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$item"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:randomChance": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$random_chance"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:item": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$item"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:descentContext": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$descent_context"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:customHudData": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$custom_hud_data"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:playerData": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$player_data"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "cosmetics:equippedBackpackStorage": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/cosmetics$equipped_backpack_storage"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:showStarcompassHud": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$show_starcompass_hud"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "minecraft:binomial": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/minecraft$binomial"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:showDepth": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$show_depth"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:gondola": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$gondola"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:mittytoken": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$mittytoken"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:orthcoin": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$orthcoin"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:okiboTraveler": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$okibo_traveler"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "mineinabyss:cosmetics": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/mineinabyss$cosmetics"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "additionalProperties": false
@@ -9372,7 +11586,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$random_chance"
+          "const": "minecraft:random_chance"
         },
         "chance": {
           "type": "number"
@@ -9402,7 +11616,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$binomial"
+          "const": "minecraft:binomial"
         },
         "n": {
           "type": "number"
@@ -9423,7 +11637,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$constant"
+          "const": "minecraft:constant"
         },
         "value": {
           "type": "number"
@@ -9440,7 +11654,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$uniform"
+          "const": "minecraft:uniform"
         },
         "min": {
           "type": "number"
@@ -9491,7 +11705,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$set_count"
+          "const": "minecraft:set_count"
         },
         "conditions": {
           "type": "array",
@@ -9527,7 +11741,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$group"
+          "const": "minecraft:group"
         },
         "weight": {
           "type": "number"
@@ -9562,7 +11776,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "minecraft$item"
+          "const": "minecraft:item"
         },
         "weight": {
           "type": "number"
@@ -9594,7 +11808,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "const": "mineinabyss$item"
+          "const": "mineinabyss:item"
         },
         "weight": {
           "type": "number"
