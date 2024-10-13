@@ -19,8 +19,8 @@ Just point your IDE to the raw generated schema file on GitHub, many IDEs will s
 
 - Install [deno](https://deno.com/)
 
-Then run the generator:
+Then run the generator, pass a project name as an argument:
 ```bash
 deno install
-deno --allow-all generator.ts
+deno --allow-all generator.ts mythicmobs
 ```
