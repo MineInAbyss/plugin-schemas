@@ -113,3 +113,23 @@ export enum MythicEntityType {
     ZOMBIE_HORSE = "ZOMBIE_HORSE",
     ZOMBIE_VILLAGER = "ZOMBIE_VILLAGER",
 }
+
+
+export enum DyeColor {
+    WHITE = "WHITE",
+    ORANGE = "ORANGE",
+    MAGENTA = "MAGENTA",
+    LIGHT_BLUE = "LIGHT_BLUE",
+    YELLOW = "YELLOW",
+    LIME = "LIME",
+    PINK = "PINK",
+    GRAY = "GRAY",
+    LIGHT_GRAY = "LIGHT_GRAY",
+    CYAN = "CYAN",
+    PURPLE = "PURPLE",
+    BLUE = "BLUE",
+    BROWN = "BROWN",
+    GREEN = "GREEN",
+    RED = "RED",
+    BLACK = "BLACK",
+}

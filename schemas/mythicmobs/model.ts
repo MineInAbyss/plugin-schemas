@@ -1,5 +1,5 @@
 export class Model {
-    Id: string;
+    Id: string = "";
     Nameplate?: string;
     Step?: number = 0.5;
     ViewRadius?: number = 0;
@@ -10,4 +10,5 @@ export class Model {
     Ride?: boolean = false;
     LockPitch?: boolean = false;
     LockYaw?: boolean = false;
+    Scale?: number = 1;
 }

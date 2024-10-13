@@ -20,7 +20,12 @@ interface Mob {
      * This field determines which entity type your creation will be based upon.
      * A complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented.
      */
-    Type: MythicEntityType;
+    Type?: MythicEntityType;
+
+    /**
+     * Templates are a functionality that allows a mob to "inherit" the characteristics of one or more other mobs.
+     */
+    Template?: string;
 
     /**
      * Sets the display name of the mob.
@@ -159,11 +164,16 @@ interface Mob {
      * Instead of using a lot of setvariable mechanics ~onSpawn, you can make a mob spawn with already set
      * variables via the use the of Variables mob field.
      */
-    Variables?: { [key: string]: any; };
+    Variables?: { [key: string]: string; };
 
     /**
      * Customizes the villager trades.
      * Villagers must have a profession and a profession level of 2 to be able to keep its custom trades.
      */
     Trades?: { [key: number]: Trade; };
+
+    /**
+     * Spawn category for Geary's spawning system
+     */
+    SpawnCategory?: string;
 }

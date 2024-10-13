@@ -9,8 +9,127 @@
       "type": "object",
       "properties": {
         "Type": {
-          "$ref": "#/definitions/MythicEntityType",
-          "description": "This field determines which entity type your creation will be based upon.\nA complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented."
+          "description": "This field determines which entity type your creation will be based upon.\nA complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented.",
+          "enum": [
+            "ALLAY",
+            "ARMADILLO",
+            "ARMOR_STAND",
+            "AXOLOTL",
+            "BABY_DROWNED",
+            "BABY_HUSK",
+            "BABY_PIGLIN",
+            "BABY_PIGLIN_BRUTE",
+            "BABY_PIG_ZOMBIE",
+            "BABY_PIG_ZOMBIE_VILLAGER",
+            "BABY_ZOGLIN",
+            "BABY_ZOMBIE",
+            "BABY_ZOMBIE_VILLAGER",
+            "BAT",
+            "BEE",
+            "BLAZE",
+            "BLOCK_DISPLAY",
+            "BOAT",
+            "BOGGED",
+            "BREEZE",
+            "CAMEL",
+            "CAT",
+            "CAVE_SPIDER",
+            "CHEST_BOAT",
+            "CHICKEN",
+            "COD",
+            "COW",
+            "CREEPER",
+            "CUSTOM",
+            "DOLPHIN",
+            "DONKEY",
+            "DROWNED",
+            "ELDER_GUARDIAN",
+            "ENDERMAN",
+            "ENDERMITE",
+            "ENDER_DRAGON",
+            "EVOKER",
+            "EXPERIENCE_BOTTLE",
+            "EXPERIENCE_ORB",
+            "FALLING_BLOCK",
+            "FOX",
+            "FROG",
+            "GHAST",
+            "GIANT",
+            "GLOW_SQUID",
+            "GOAT",
+            "GUARDIAN",
+            "HOGLIN",
+            "HORSE",
+            "HUSK",
+            "ILLUSIONER",
+            "INTERACTION",
+            "IRON_GOLEM",
+            "ITEM",
+            "ITEM_DISPLAY",
+            "LLAMA",
+            "MAGMA_CUBE",
+            "MARKER",
+            "MINECART",
+            "MINECART_CHEST",
+            "MINECART_COMMAND",
+            "MINECART_FURNACE",
+            "MINECART_HOPPER",
+            "MINECART_MOB_SPAWNER",
+            "MINECART_TNT",
+            "MULE",
+            "MUSHROOM_COW",
+            "OCELOT",
+            "PANDA",
+            "PARROT",
+            "PHANTOM",
+            "PIG",
+            "PIGLIN",
+            "PIGLIN_BRUTE",
+            "PILLAGER",
+            "POLAR_BEAR",
+            "PRIMED_TNT",
+            "PUFFERFISH",
+            "RABBIT",
+            "RAVAGER",
+            "SALMON",
+            "SHEEP",
+            "SHULKER",
+            "SILVERFISH",
+            "SKELETON",
+            "SKELETON_HORSE",
+            "SLIME",
+            "SNIFFER",
+            "SNOWMAN",
+            "SPIDER",
+            "SQUID",
+            "STRAY",
+            "STRIDER",
+            "TADPOLE",
+            "TEXT_DISPLAY",
+            "TRADER_LLAMA",
+            "TROPICAL_FISH",
+            "TURTLE",
+            "VEX",
+            "VILLAGER",
+            "VINDICATOR",
+            "WANDERING_TRADER",
+            "WARDEN",
+            "WITCH",
+            "WITHER",
+            "WITHER_SKELETON",
+            "WOLF",
+            "ZOGLIN",
+            "ZOMBIE",
+            "ZOMBIE_HORSE",
+            "ZOMBIE_VILLAGER",
+            "ZOMBIFIED_PIGLIN",
+            "ZOMBIFIED_PIGLIN_VILLAGER"
+          ],
+          "type": "string"
+        },
+        "Template": {
+          "description": "Templates are a functionality that allows a mob to \"inherit\" the characteristics of one or more other mobs.",
+          "type": "string"
         },
         "Display": {
           "description": "Sets the display name of the mob.\nThis option supports color codes and placeholders.\nThe mob's name will not change or update on its own, you have to use setname mechanic to change or update it.",
@@ -131,7 +250,9 @@
         "Variables": {
           "description": "Instead of using a lot of setvariable mechanics ~onSpawn, you can make a mob spawn with already set\nvariables via the use the of Variables mob field.",
           "type": "object",
-          "additionalProperties": {}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "Trades": {
           "description": "Customizes the villager trades.\nVillagers must have a profession and a profession level of 2 to be able to keep its custom trades.",
@@ -142,129 +263,13 @@
               "$ref": "#/definitions/Trade"
             }
           }
+        },
+        "SpawnCategory": {
+          "description": "Spawn category for Geary's spawning system",
+          "type": "string"
         }
       },
-      "required": [
-        "Type"
-      ]
-    },
-    "MythicEntityType": {
-      "type": "string",
-      "enum": [
-        "ALLAY",
-        "ARMADILLO",
-        "ARMOR_STAND",
-        "AXOLOTL",
-        "BABY_DROWNED",
-        "BABY_HUSK",
-        "BABY_PIGLIN",
-        "BABY_PIGLIN_BRUTE",
-        "BABY_PIG_ZOMBIE",
-        "BABY_PIG_ZOMBIE_VILLAGER",
-        "BABY_ZOGLIN",
-        "BABY_ZOMBIE",
-        "BABY_ZOMBIE_VILLAGER",
-        "BAT",
-        "BEE",
-        "BLAZE",
-        "BLOCK_DISPLAY",
-        "BOGGED",
-        "BREEZE",
-        "BOAT",
-        "CAT",
-        "CAMEL",
-        "CAVE_SPIDER",
-        "CHEST_BOAT",
-        "CHICKEN",
-        "COD",
-        "COW",
-        "CREEPER",
-        "CUSTOM",
-        "DOLPHIN",
-        "DONKEY",
-        "DROWNED",
-        "ELDER_GUARDIAN",
-        "ENDER_DRAGON",
-        "ENDERMAN",
-        "ENDERMITE",
-        "EVOKER",
-        "EXPERIENCE_BOTTLE",
-        "EXPERIENCE_ORB",
-        "FALLING_BLOCK",
-        "FOX",
-        "FROG",
-        "GHAST",
-        "GIANT",
-        "GOAT",
-        "GLOW_SQUID",
-        "GUARDIAN",
-        "HOGLIN",
-        "HORSE",
-        "HUSK",
-        "ILLUSIONER",
-        "INTERACTION",
-        "IRON_GOLEM",
-        "ITEM",
-        "ITEM_DISPLAY",
-        "LLAMA",
-        "MAGMA_CUBE",
-        "MARKER",
-        "MINECART",
-        "MINECART_CHEST",
-        "MINECART_COMMAND",
-        "MINECART_FURNACE",
-        "MINECART_HOPPER",
-        "MINECART_MOB_SPAWNER",
-        "MINECART_TNT",
-        "MULE",
-        "MUSHROOM_COW",
-        "OCELOT",
-        "PANDA",
-        "PARROT",
-        "PHANTOM",
-        "PIG",
-        "PIGLIN",
-        "PIGLIN_BRUTE",
-        "ZOMBIFIED_PIGLIN",
-        "ZOMBIFIED_PIGLIN_VILLAGER",
-        "PILLAGER",
-        "POLAR_BEAR",
-        "PRIMED_TNT",
-        "PUFFERFISH",
-        "RABBIT",
-        "RAVAGER",
-        "SALMON",
-        "SHEEP",
-        "SHULKER",
-        "SILVERFISH",
-        "SKELETON",
-        "SKELETON_HORSE",
-        "SLIME",
-        "SNIFFER",
-        "SNOWMAN",
-        "SPIDER",
-        "STRAY",
-        "STRIDER",
-        "SQUID",
-        "TADPOLE",
-        "TEXT_DISPLAY",
-        "TRADER_LLAMA",
-        "TROPICAL_FISH",
-        "TURTLE",
-        "VEX",
-        "VILLAGER",
-        "VINDICATOR",
-        "WANDERING_TRADER",
-        "WARDEN",
-        "WITCH",
-        "WITHER",
-        "WITHER_SKELETON",
-        "WOLF",
-        "ZOGLIN",
-        "ZOMBIE",
-        "ZOMBIE_HORSE",
-        "ZOMBIE_VILLAGER"
-      ]
+      "additionalProperties": false
     },
     "HealthBar": {
       "type": "object",
@@ -277,7 +282,8 @@
           "type": "number",
           "default": 1.45
         }
-      }
+      },
+      "additionalProperties": false
     },
     "BossBar": {
       "type": "object",
@@ -326,7 +332,8 @@
         "PlayMusic": {
           "type": "boolean"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Options": {
       "type": "object",
@@ -369,7 +376,9 @@
           "type": "number"
         },
         "FollowRange": {
-          "type": "number"
+          "description": "The range in blocks within which a mob will target to attack or track an entity",
+          "type": "number",
+          "default": 32
         },
         "AttackSpeed": {
           "type": "number"
@@ -447,8 +456,12 @@
           "type": "boolean",
           "default": false
         },
-        "PreventVanillaDamage": {},
-        "PreventOtherDrops": {},
+        "PreventVanillaDamage": {
+          "type": "boolean"
+        },
+        "PreventOtherDrops": {
+          "type": "boolean"
+        },
         "PreventRandomEquipment": {
           "type": "boolean",
           "default": false
@@ -505,6 +518,11 @@
           "type": "boolean",
           "default": false
         },
+        "PreventBlockInfection": {
+          "description": "Prevent silverfish from infecting blocks.",
+          "type": "boolean",
+          "default": false
+        },
         "PassthroughDamage": {
           "type": "boolean",
           "default": false
@@ -528,8 +546,181 @@
         "DigOutOfGround": {
           "type": "boolean",
           "default": false
+        },
+        "Color": {
+          "description": "Sets the color of the mob (wool color of sheep or the collar color of wolves)\nThe value can be any of this Colors",
+          "default": "WHITE",
+          "enum": [
+            "BLACK",
+            "BLUE",
+            "BROWN",
+            "CYAN",
+            "GRAY",
+            "GREEN",
+            "LIGHT_BLUE",
+            "LIGHT_GRAY",
+            "LIME",
+            "MAGENTA",
+            "ORANGE",
+            "PINK",
+            "PURPLE",
+            "RED",
+            "WHITE",
+            "YELLOW"
+          ],
+          "type": "string"
+        },
+        "Angry": {
+          "description": "Whether the mob will spawn angry or not, i.e. wolves.",
+          "type": "boolean",
+          "default": false
+        },
+        "PreventSlimeSplit": {
+          "type": "boolean",
+          "default": false
+        },
+        "Size": {
+          "description": "Sets the size of slimes, magma cubes, and phantoms.\nCan get VERY big and get exponentially larger with each increase.\nExtremely high size will cause server lag and possibly crashes",
+          "type": [
+            "string",
+            "number"
+          ],
+          "default": 1
+        },
+        "CanJoinRaid": {
+          "type": "boolean",
+          "default": true
+        },
+        "PatrolLeader": {
+          "type": "boolean",
+          "default": false
+        },
+        "PatrolSpawnPoint": {
+          "type": "boolean",
+          "default": false
+        },
+        "Tameable": {
+          "type": "boolean",
+          "default": false
+        },
+        "PreventConversion": {
+          "description": "Prevent a Skeleton or Zombie from being converted into other types of skeletons.",
+          "type": "boolean",
+          "default": false
+        },
+        "ReinforcementsChance": {
+          "type": "number",
+          "default": 0
+        },
+        "CanMove": {
+          "type": "boolean",
+          "default": true
+        },
+        "CanTick": {
+          "type": "boolean",
+          "default": true
+        },
+        "HasArms": {
+          "type": "boolean",
+          "default": false
+        },
+        "HasBasePlate": {
+          "type": "boolean",
+          "default": true
+        },
+        "HasGravity": {
+          "type": "boolean",
+          "default": true
+        },
+        "ItemBody": {
+          "description": "Designates the Mythic Item that should go in the body/chest slot of an armor stand.",
+          "type": "string"
+        },
+        "ItemFeet": {
+          "description": "Designates the Mythic Item that should go in the feet slot of an armor stand.",
+          "type": "string"
+        },
+        "ItemHand": {
+          "description": "Designates the Mythic Item that should go in the main hand slot of an armor stand.",
+          "type": "string"
+        },
+        "ItemOffHand": {
+          "description": "Designates the Mythic Item that should go in the off hand slot of an armor stand.",
+          "type": "string"
+        },
+        "ItemHead": {
+          "description": "Designates the Mythic Item that should go in the helmet slot of an armor stand.",
+          "type": "string"
+        },
+        "ItemLegs": {
+          "description": "Designates the Mythic Item that should go in the leggings slot of an armor stand.",
+          "type": "string"
+        },
+        "Marker": {
+          "description": "Sets the armor stand as a marker. This option prevents the armor stand from being destroyed in game,\nmaking it completely non-interactable.",
+          "type": "boolean",
+          "default": false
+        },
+        "Small": {
+          "description": "Sets the armor stand to small variant.",
+          "type": "boolean",
+          "default": false
+        },
+        "Pose": {
+          "$ref": "#/definitions/Pose"
+        },
+        "Anger": {
+          "description": "Sets the time in ticks until bee anger ends. If set to 0 the bee will not be angry.",
+          "type": "number",
+          "default": 0
+        },
+        "HasNectar": {
+          "description": "Whether the bee is carrying pollen.",
+          "type": "boolean",
+          "default": false
+        },
+        "HasStung": {
+          "description": "Whether the bee has stung an entity.",
+          "type": "boolean",
+          "default": false
+        },
+        "PreventStingerLoss": {
+          "description": "Whether to prevent the bee from losing its stinger once it hits an entity.",
+          "type": "boolean",
+          "default": false
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "Pose": {
+      "type": "object",
+      "properties": {
+        "Head": {
+          "type": "string",
+          "default": "0,0,0"
+        },
+        "Body": {
+          "type": "string",
+          "default": "0,0,0"
+        },
+        "LeftArm": {
+          "type": "string",
+          "default": "0,0,0"
+        },
+        "RightArm": {
+          "type": "string",
+          "default": "0,0,0"
+        },
+        "LeftLeg": {
+          "type": "string",
+          "default": "0,0,0"
+        },
+        "RightLeg": {
+          "type": "string",
+          "default": "0,0,0"
+        }
+      },
+      "additionalProperties": false
     },
     "Modules": {
       "type": "object",
@@ -542,7 +733,8 @@
           "type": "boolean",
           "default": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "LevelModifiers": {
       "type": "object",
@@ -565,13 +757,15 @@
         "MovementSpeed": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Model": {
       "type": "object",
       "properties": {
         "Id": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "Nameplate": {
           "type": "string"
@@ -611,8 +805,13 @@
         "LockYaw": {
           "type": "boolean",
           "default": false
+        },
+        "Scale": {
+          "type": "number",
+          "default": 1
         }
       },
+      "additionalProperties": false,
       "required": [
         "Id"
       ]
@@ -634,7 +833,8 @@
           "description": "If set, forces the nameplate to work with modeled entities from the ModelEngine plugin",
           "type": "boolean"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Hearing": {
       "type": "object",
@@ -643,7 +843,8 @@
           "type": "boolean",
           "default": true
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Trade": {
       "type": "object",
@@ -663,7 +864,8 @@
         "MaxUses": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

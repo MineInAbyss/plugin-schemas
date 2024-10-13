@@ -12,7 +12,7 @@ Here's everything we have so far:
 Just point your IDE to the raw generated schema file on GitHub, many IDEs will support doing this by adding a comment at the top of the file:
 
 ```yaml
-# yaml-language-server: $schema=https://my.url.to/the/schema
+# yaml-language-server: $schema=https://raw.githubusercontent.com/MineInAbyss/plugin-schemas/refs/heads/master/generated/mythicmobs.json
 ```
 
 ## Building
