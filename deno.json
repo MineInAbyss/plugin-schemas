@@ -1,3 +1,5 @@
 {
-  "imports": { "typescript-json-schema": "npm:typescript-json-schema@^0.65.1" }
+  "imports": {
+    "ts-json-schema-generator": "npm:ts-json-schema-generator@^2.3.0"
+  }
 }

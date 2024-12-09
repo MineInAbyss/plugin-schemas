@@ -2,7 +2,7 @@ export type EntityExpression = string;
 export type geary$entity = string;
 export type geary$uuid = string;
 export type geary$prefab_key = string;
-class Base {
+export class Base {
     "entity"?: geary$entity;
     "uuid"?: geary$uuid;
     "location"?: geary$location;

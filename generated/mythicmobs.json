@@ -1,286 +1,283 @@
 {
-  "type": "object",
-  "additionalProperties": {
-    "$ref": "#/definitions/Mob"
-  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/Base",
   "definitions": {
-    "Mob": {
-      "description": "This string will be how your mob will be referenced internally in MythicMobs and can be any name you like.\nMust be a unique name and does not clash with other internal mob names, NO SPACES ALLOWED.",
+    "Base": {
       "type": "object",
-      "properties": {
-        "Type": {
-          "description": "This field determines which entity type your creation will be based upon.\nA complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented.",
-          "enum": [
-            "ALLAY",
-            "ARMADILLO",
-            "ARMOR_STAND",
-            "AXOLOTL",
-            "BABY_DROWNED",
-            "BABY_HUSK",
-            "BABY_PIGLIN",
-            "BABY_PIGLIN_BRUTE",
-            "BABY_PIG_ZOMBIE",
-            "BABY_PIG_ZOMBIE_VILLAGER",
-            "BABY_ZOGLIN",
-            "BABY_ZOMBIE",
-            "BABY_ZOMBIE_VILLAGER",
-            "BAT",
-            "BEE",
-            "BLAZE",
-            "BLOCK_DISPLAY",
-            "BOAT",
-            "BOGGED",
-            "BREEZE",
-            "CAMEL",
-            "CAT",
-            "CAVE_SPIDER",
-            "CHEST_BOAT",
-            "CHICKEN",
-            "COD",
-            "COW",
-            "CREEPER",
-            "CUSTOM",
-            "DOLPHIN",
-            "DONKEY",
-            "DROWNED",
-            "ELDER_GUARDIAN",
-            "ENDERMAN",
-            "ENDERMITE",
-            "ENDER_DRAGON",
-            "EVOKER",
-            "EXPERIENCE_BOTTLE",
-            "EXPERIENCE_ORB",
-            "FALLING_BLOCK",
-            "FOX",
-            "FROG",
-            "GHAST",
-            "GIANT",
-            "GLOW_SQUID",
-            "GOAT",
-            "GUARDIAN",
-            "HOGLIN",
-            "HORSE",
-            "HUSK",
-            "ILLUSIONER",
-            "INTERACTION",
-            "IRON_GOLEM",
-            "ITEM",
-            "ITEM_DISPLAY",
-            "LLAMA",
-            "MAGMA_CUBE",
-            "MARKER",
-            "MINECART",
-            "MINECART_CHEST",
-            "MINECART_COMMAND",
-            "MINECART_FURNACE",
-            "MINECART_HOPPER",
-            "MINECART_MOB_SPAWNER",
-            "MINECART_TNT",
-            "MULE",
-            "MUSHROOM_COW",
-            "OCELOT",
-            "PANDA",
-            "PARROT",
-            "PHANTOM",
-            "PIG",
-            "PIGLIN",
-            "PIGLIN_BRUTE",
-            "PILLAGER",
-            "POLAR_BEAR",
-            "PRIMED_TNT",
-            "PUFFERFISH",
-            "RABBIT",
-            "RAVAGER",
-            "SALMON",
-            "SHEEP",
-            "SHULKER",
-            "SILVERFISH",
-            "SKELETON",
-            "SKELETON_HORSE",
-            "SLIME",
-            "SNIFFER",
-            "SNOWMAN",
-            "SPIDER",
-            "SQUID",
-            "STRAY",
-            "STRIDER",
-            "TADPOLE",
-            "TEXT_DISPLAY",
-            "TRADER_LLAMA",
-            "TROPICAL_FISH",
-            "TURTLE",
-            "VEX",
-            "VILLAGER",
-            "VINDICATOR",
-            "WANDERING_TRADER",
-            "WARDEN",
-            "WITCH",
-            "WITHER",
-            "WITHER_SKELETON",
-            "WOLF",
-            "ZOGLIN",
-            "ZOMBIE",
-            "ZOMBIE_HORSE",
-            "ZOMBIE_VILLAGER",
-            "ZOMBIFIED_PIGLIN",
-            "ZOMBIFIED_PIGLIN_VILLAGER"
-          ],
-          "type": "string"
-        },
-        "Template": {
-          "description": "Templates are a functionality that allows a mob to \"inherit\" the characteristics of one or more other mobs.",
-          "type": "string"
-        },
-        "Display": {
-          "description": "Sets the display name of the mob.\nThis option supports color codes and placeholders.\nThe mob's name will not change or update on its own, you have to use setname mechanic to change or update it.",
-          "type": "string"
-        },
-        "Health": {
-          "description": "Sets the base value of the mob's max health attribute.\nMythic doesn't have any limitations on max health but Spigot, however, caps the max health at 2048.\nThis can easily be changed in spigot's configuration file, server_root\\spigot.yml.\nWhenever the mob is holding or wearing an item with attribute modifiers will also affect the total max health.",
-          "minimum": 0,
-          "type": "number"
-        },
-        "Damage": {
-          "description": "Sets the base value of the mob's melee attack damage attribute.\n1 damage equals to 0.5 hearts, so a mob with 6 damage will deal 3 full hearts of damage.\nThis attribute will never affect damage done by ranged attacks, like arrows or potions.\nWhenever the mob is holding or wearing an item with attribute modifiers will also affect the mob's melee damage.",
-          "type": "number"
-        },
-        "Armor": {
-          "description": "Sets the base value of the mob's armor attribute.\nMinecraft caps the max armor value to 30.\nWhenever the mob is holding or wearing an item with attribute modifiers will also affect the total armor.",
-          "type": "number"
-        },
-        "HealthBar": {
-          "description": "Creates a basic health bar hologram above the mob, once the mob has been damaged.",
-          "$ref": "#/definitions/HealthBar"
-        },
-        "BossBar": {
-          "description": "Defines and controls the health bar of the mob.\nLooks like the Ender Dragon's or the Wither's health bar, but is configurable in appearance.",
-          "$ref": "#/definitions/BossBar"
-        },
-        "Faction": {
-          "description": "Sets the mob's faction, which can be used for advanced Custom AI configurations or targeter filtering.\nFaction is case-sensitive, so be careful when using faction conditions.",
-          "type": "string"
-        },
-        "Mount": {
-          "description": "Sets the mount of your mob. Must be another MythicMob.\nThe mob will automatically ride on the defined mount when it spawns.",
-          "type": "string"
-        },
-        "DisplayOptions": {
-          "description": "Sets the display entity options.\nA list of available display options can be found at https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Mobs/DisplayOptions",
-          "type": "object",
-          "properties": {},
-          "additionalProperties": true
-        },
-        "Options": {
-          "description": "This is a special field which comes with numerous sub-options, like determining if the mob should despawn,\nsetting knockback resistance, follow range, movement speed and many more.",
-          "$ref": "#/definitions/Options"
-        },
-        "Modules": {
-          "description": "This field allows you to enable or disable modules, like Threat Tables and/or Immunity Tables",
-          "$ref": "#/definitions/Modules"
-        },
-        "AIGoalSelectors": {
-          "description": "Modifies and customizes the AI goals of the mob.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "AITargetSelectors": {
-          "description": "Modifies and customizes the AI targets of the mob.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Drops": {
-          "description": "Add or completely modify the mob loot drops.\nCan be vanilla items, mythic items, experience points, cross-plugin items (if supported), or even custom drop tables with their own condition system.\nSee Drops & DropTables for more information.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "DamageModifiers": {
-          "description": "Modify how much damage the mob will take from different damage causes.\nFor example, DamageModifiers can be used to make the mob immune to melee attacks, but weak to ranged attacks.\nSee Damage Modifiers for more information.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Equipment": {
-          "description": "Equips the mob with vanilla items or mythic items when it first spawns.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "KillMessages": {
-          "description": "Customize the [kill messages] that appears when the mob kills a player.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "LevelModifiers": {
-          "description": "MythicMobs can have [levels](/Mobs/Levels) and this field is used to determine\nwhich kinds of statistics they should gain on when their levels change.",
-          "$ref": "#/definitions/LevelModifiers"
-        },
-        "Disguise": {
-          "description": "Changes the appearance of the mob to be like other entity types.\nRequires the plugin [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/) to be installed and functioning on your server.\nSee [Add-on: Disguises](/Mobs/Disguises) for more information.",
-          "type": "string"
-        },
-        "Skills": {
-          "description": "Skills are an integral feature of Mythic. All mobs are able to have skills of various types that can be triggered under different circumstances with varying\nconditions. The Mythic skill system is quite intuitive once you get used to it, and can be used to create anything from simple mobs to incredibly complex bosses.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Model": {
-          "description": "ModelEngine options",
-          "$ref": "#/definitions/Model"
-        },
-        "Nameplate": {
-          "description": "Forces the usage of Mythic nameplates on the mob, if the `Enabled: true` option is used.\nThis makes display names like `Display: \"Hello\\nWorld!\"` be displayed on two separate lines.",
-          "$ref": "#/definitions/Nameplate"
-        },
-        "Hearing": {
-          "description": "Allows the mob to \"hear\" sounds like a warden would.\nTurning this on enables the new ~onHear trigger.",
-          "$ref": "#/definitions/Hearing"
-        },
-        "Variables": {
-          "description": "Instead of using a lot of setvariable mechanics ~onSpawn, you can make a mob spawn with already set\nvariables via the use the of Variables mob field.",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "Trades": {
-          "description": "Customizes the villager trades.\nVillagers must have a profession and a profession level of 2 to be able to keep its custom trades.",
-          "type": "object",
-          "additionalProperties": false,
-          "patternProperties": {
-            "^[0-9]+$": {
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "Type": {
+            "$ref": "#/definitions/MythicEntityType",
+            "description": "This field determines which entity type your creation will be based upon. A complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented."
+          },
+          "Template": {
+            "type": "string",
+            "description": "Templates are a functionality that allows a mob to \"inherit\" the characteristics of one or more other mobs."
+          },
+          "Display": {
+            "type": "string",
+            "description": "Sets the display name of the mob. This option supports color codes and placeholders. The mob's name will not change or update on its own, you have to use setname mechanic to change or update it."
+          },
+          "Health": {
+            "type": "number",
+            "description": "Sets the base value of the mob's max health attribute. Mythic doesn't have any limitations on max health but Spigot, however, caps the max health at 2048. This can easily be changed in spigot's configuration file, server_root\\spigot.yml. Whenever the mob is holding or wearing an item with attribute modifiers will also affect the total max health.",
+            "minimum": 0
+          },
+          "Damage": {
+            "type": "number",
+            "description": "Sets the base value of the mob's melee attack damage attribute. 1 damage equals to 0.5 hearts, so a mob with 6 damage will deal 3 full hearts of damage. This attribute will never affect damage done by ranged attacks, like arrows or potions. Whenever the mob is holding or wearing an item with attribute modifiers will also affect the mob's melee damage."
+          },
+          "Armor": {
+            "type": "number",
+            "description": "Sets the base value of the mob's armor attribute. Minecraft caps the max armor value to 30. Whenever the mob is holding or wearing an item with attribute modifiers will also affect the total armor."
+          },
+          "HealthBar": {
+            "$ref": "#/definitions/HealthBar",
+            "description": "Creates a basic health bar hologram above the mob, once the mob has been damaged."
+          },
+          "BossBar": {
+            "$ref": "#/definitions/BossBar",
+            "description": "Defines and controls the health bar of the mob. Looks like the Ender Dragon's or the Wither's health bar, but is configurable in appearance."
+          },
+          "Faction": {
+            "type": "string",
+            "description": "Sets the mob's faction, which can be used for advanced Custom AI configurations or targeter filtering. Faction is case-sensitive, so be careful when using faction conditions."
+          },
+          "Mount": {
+            "type": "string",
+            "description": "Sets the mount of your mob. Must be another MythicMob. The mob will automatically ride on the defined mount when it spawns."
+          },
+          "DisplayOptions": {
+            "type": "object",
+            "description": "Sets the display entity options. A list of available display options can be found at https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Mobs/DisplayOptions"
+          },
+          "Options": {
+            "$ref": "#/definitions/Options",
+            "description": "This is a special field which comes with numerous sub-options, like determining if the mob should despawn, setting knockback resistance, follow range, movement speed and many more."
+          },
+          "Modules": {
+            "$ref": "#/definitions/Modules",
+            "description": "This field allows you to enable or disable modules, like Threat Tables and/or Immunity Tables"
+          },
+          "AIGoalSelectors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Modifies and customizes the AI goals of the mob."
+          },
+          "AITargetSelectors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Modifies and customizes the AI targets of the mob."
+          },
+          "Drops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Add or completely modify the mob loot drops. Can be vanilla items, mythic items, experience points, cross-plugin items (if supported), or even custom drop tables with their own condition system. See Drops & DropTables for more information."
+          },
+          "DamageModifiers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Modify how much damage the mob will take from different damage causes. For example, DamageModifiers can be used to make the mob immune to melee attacks, but weak to ranged attacks. See Damage Modifiers for more information."
+          },
+          "Equipment": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Equips the mob with vanilla items or mythic items when it first spawns."
+          },
+          "KillMessages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Customize the [kill messages] that appears when the mob kills a player."
+          },
+          "LevelModifiers": {
+            "$ref": "#/definitions/LevelModifiers",
+            "description": "MythicMobs can have [levels](/Mobs/Levels) and this field is used to determine which kinds of statistics they should gain on when their levels change."
+          },
+          "Disguise": {
+            "type": "string",
+            "description": "Changes the appearance of the mob to be like other entity types. Requires the plugin [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/) to be installed and functioning on your server. See [Add-on: Disguises](/Mobs/Disguises) for more information."
+          },
+          "Skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Skills are an integral feature of Mythic. All mobs are able to have skills of various types that can be triggered under different circumstances with varying conditions. The Mythic skill system is quite intuitive once you get used to it, and can be used to create anything from simple mobs to incredibly complex bosses."
+          },
+          "Model": {
+            "$ref": "#/definitions/Model",
+            "description": "ModelEngine options"
+          },
+          "Nameplate": {
+            "$ref": "#/definitions/Nameplate",
+            "description": "Forces the usage of Mythic nameplates on the mob, if the `Enabled: true` option is used. This makes display names like `Display: \"Hello\\nWorld!\"` be displayed on two separate lines."
+          },
+          "Hearing": {
+            "$ref": "#/definitions/Hearing",
+            "description": "Allows the mob to \"hear\" sounds like a warden would. Turning this on enables the new ~onHear trigger."
+          },
+          "Variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Instead of using a lot of setvariable mechanics ~onSpawn, you can make a mob spawn with already set variables via the use the of Variables mob field."
+          },
+          "Trades": {
+            "type": "object",
+            "additionalProperties": {
               "$ref": "#/definitions/Trade"
-            }
+            },
+            "description": "Customizes the villager trades. Villagers must have a profession and a profession level of 2 to be able to keep its custom trades."
+          },
+          "SpawnCategory": {
+            "type": "string",
+            "description": "Spawn category for Geary's spawning system"
           }
         },
-        "SpawnCategory": {
-          "description": "Spawn category for Geary's spawning system",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
+        "additionalProperties": false,
+        "description": "This string will be how your mob will be referenced internally in MythicMobs and can be any name you like. Must be a unique name and does not clash with other internal mob names, NO SPACES ALLOWED."
+      }
+    },
+    "MythicEntityType": {
+      "type": "string",
+      "enum": [
+        "ALLAY",
+        "ARMADILLO",
+        "ARMOR_STAND",
+        "AXOLOTL",
+        "BABY_DROWNED",
+        "BABY_HUSK",
+        "BABY_PIGLIN",
+        "BABY_PIGLIN_BRUTE",
+        "BABY_PIG_ZOMBIE",
+        "BABY_PIG_ZOMBIE_VILLAGER",
+        "BABY_ZOGLIN",
+        "BABY_ZOMBIE",
+        "BABY_ZOMBIE_VILLAGER",
+        "BAT",
+        "BEE",
+        "BLAZE",
+        "BLOCK_DISPLAY",
+        "BOGGED",
+        "BREEZE",
+        "BOAT",
+        "CAT",
+        "CAMEL",
+        "CAVE_SPIDER",
+        "CHEST_BOAT",
+        "CHICKEN",
+        "COD",
+        "COW",
+        "CREEPER",
+        "CUSTOM",
+        "DOLPHIN",
+        "DONKEY",
+        "DROWNED",
+        "ELDER_GUARDIAN",
+        "ENDER_DRAGON",
+        "ENDERMAN",
+        "ENDERMITE",
+        "EVOKER",
+        "EXPERIENCE_BOTTLE",
+        "EXPERIENCE_ORB",
+        "FALLING_BLOCK",
+        "FOX",
+        "FROG",
+        "GHAST",
+        "GIANT",
+        "GOAT",
+        "GLOW_SQUID",
+        "GUARDIAN",
+        "HOGLIN",
+        "HORSE",
+        "HUSK",
+        "ILLUSIONER",
+        "INTERACTION",
+        "IRON_GOLEM",
+        "ITEM",
+        "ITEM_DISPLAY",
+        "LLAMA",
+        "MAGMA_CUBE",
+        "MARKER",
+        "MINECART",
+        "MINECART_CHEST",
+        "MINECART_COMMAND",
+        "MINECART_FURNACE",
+        "MINECART_HOPPER",
+        "MINECART_MOB_SPAWNER",
+        "MINECART_TNT",
+        "MULE",
+        "MUSHROOM_COW",
+        "OCELOT",
+        "PANDA",
+        "PARROT",
+        "PHANTOM",
+        "PIG",
+        "PIGLIN",
+        "PIGLIN_BRUTE",
+        "ZOMBIFIED_PIGLIN",
+        "ZOMBIFIED_PIGLIN_VILLAGER",
+        "PILLAGER",
+        "POLAR_BEAR",
+        "PRIMED_TNT",
+        "PUFFERFISH",
+        "RABBIT",
+        "RAVAGER",
+        "SALMON",
+        "SHEEP",
+        "SHULKER",
+        "SILVERFISH",
+        "SKELETON",
+        "SKELETON_HORSE",
+        "SLIME",
+        "SNIFFER",
+        "SNOWMAN",
+        "SPIDER",
+        "STRAY",
+        "STRIDER",
+        "SQUID",
+        "TADPOLE",
+        "TEXT_DISPLAY",
+        "TRADER_LLAMA",
+        "TROPICAL_FISH",
+        "TURTLE",
+        "VEX",
+        "VILLAGER",
+        "VINDICATOR",
+        "WANDERING_TRADER",
+        "WARDEN",
+        "WITCH",
+        "WITHER",
+        "WITHER_SKELETON",
+        "WOLF",
+        "ZOGLIN",
+        "ZOMBIE",
+        "ZOMBIE_HORSE",
+        "ZOMBIE_VILLAGER"
+      ]
     },
     "HealthBar": {
       "type": "object",
       "properties": {
         "Enabled": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Offset": {
-          "type": "number",
-          "default": 1.45
+          "type": "number"
         }
       },
       "additionalProperties": false
@@ -289,45 +286,28 @@
       "type": "object",
       "properties": {
         "Enabled": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Title": {
           "type": "string"
         },
         "Range": {
-          "description": "Range is the distance the BossBar will be displayed to players around the mob.",
-          "type": "number"
+          "type": "number",
+          "description": "Range is the distance the BossBar will be displayed to players around the mob."
         },
         "Color": {
-          "enum": [
-            "BLUE",
-            "GREEN",
-            "PINK",
-            "PURPLE",
-            "RED",
-            "WHITE",
-            "YELLOW"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/BossBarColor"
         },
         "Style": {
-          "enum": [
-            "SEGMENTED_10",
-            "SEGMENTED_12",
-            "SEGMENTED_20",
-            "SEGMENTED_6",
-            "SOLID"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/BossBarStyle"
         },
         "CreateFog": {
-          "description": "Adds a fog-like effect to the player's vision while in the radius defined for the bossbar.",
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Adds a fog-like effect to the player's vision while in the radius defined for the bossbar."
         },
         "DarkenSky": {
-          "description": "Darkens the sky while in the radius defined for the bossbar, similar to the effect created when the Wither is spawned.",
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Darkens the sky while in the radius defined for the bossbar, similar to the effect created when the Wither is spawned."
         },
         "PlayMusic": {
           "type": "boolean"
@@ -335,36 +315,59 @@
       },
       "additionalProperties": false
     },
+    "BossBarColor": {
+      "type": "string",
+      "enum": [
+        "PINK",
+        "BLUE",
+        "RED",
+        "GREEN",
+        "YELLOW",
+        "PURPLE",
+        "WHITE"
+      ]
+    },
+    "BossBarStyle": {
+      "type": "string",
+      "enum": [
+        "SOLID",
+        "SEGMENTED_6",
+        "SEGMENTED_10",
+        "SEGMENTED_12",
+        "SEGMENTED_20"
+      ]
+    },
     "Options": {
       "type": "object",
       "properties": {
         "ReviveHealth": {
-          "type": "number",
-          "default": 10
+          "type": "number"
         },
         "Invincible": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Invulnerable": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Despawn": {
-          "enum": [
-            "CHUNK",
-            "NEVER",
-            "NORMAL",
-            "NPC",
-            "PERSISTENT",
-            false,
-            true
-          ],
-          "default": true
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "NORMAL",
+                "CHUNK",
+                "NEVER",
+                "PERSISTENT",
+                "NPC"
+              ]
+            }
+          ]
         },
         "Persistent": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "MovementSpeed": {
           "type": "number"
@@ -376,9 +379,8 @@
           "type": "number"
         },
         "FollowRange": {
-          "description": "The range in blocks within which a mob will target to attack or track an entity",
           "type": "number",
-          "default": 32
+          "description": "The range in blocks within which a mob will target to attack or track an entity"
         },
         "AttackSpeed": {
           "type": "number"
@@ -387,40 +389,31 @@
           "type": "number"
         },
         "Glowing": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Collidable": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "NoGravity": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Interactable": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Silent": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "NoAI": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "HealOnReload": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "NoDamageTicks": {
-          "type": "number",
-          "default": 10
+          "type": "number"
         },
         "LockPitch": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "UseThreatTable": {
           "type": "boolean"
@@ -429,32 +422,25 @@
           "type": "boolean"
         },
         "MaxAttackRange": {
-          "type": "number",
-          "default": 64
+          "type": "number"
         },
         "MaxCombatDistance": {
-          "type": "number",
-          "default": 256
+          "type": "number"
         },
         "MaxAttackableRange": {
-          "type": "number",
-          "default": 256
+          "type": "number"
         },
         "MaxThreatDistance": {
-          "type": "number",
-          "default": 40
+          "type": "number"
         },
         "AlwaysShowName": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "ShowNameOnDamaged": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "RepeatAllSkills": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventVanillaDamage": {
           "type": "boolean"
@@ -463,261 +449,217 @@
           "type": "boolean"
         },
         "PreventRandomEquipment": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventLeashing": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventRenaming": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventSunburn": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventTeleport": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventTeleporting": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventTransformation": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventTransforming": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventTransform": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventMounts": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventJockey": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventJockeyMounts": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventItemPickup": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PreventMobKillDrops": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventBlockInfection": {
-          "description": "Prevent silverfish from infecting blocks.",
           "type": "boolean",
-          "default": false
+          "description": "Prevent silverfish from infecting blocks."
         },
         "PassthroughDamage": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "ApplyInvisibility": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Invisibility": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Invisible": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "VisibleByDefault": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "DigOutOfGround": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Color": {
-          "description": "Sets the color of the mob (wool color of sheep or the collar color of wolves)\nThe value can be any of this Colors",
-          "default": "WHITE",
-          "enum": [
-            "BLACK",
-            "BLUE",
-            "BROWN",
-            "CYAN",
-            "GRAY",
-            "GREEN",
-            "LIGHT_BLUE",
-            "LIGHT_GRAY",
-            "LIME",
-            "MAGENTA",
-            "ORANGE",
-            "PINK",
-            "PURPLE",
-            "RED",
-            "WHITE",
-            "YELLOW"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/DyeColor",
+          "description": "Sets the color of the mob (wool color of sheep or the collar color of wolves) The value can be any of this Colors",
+          "default": "WHITE"
         },
         "Angry": {
-          "description": "Whether the mob will spawn angry or not, i.e. wolves.",
           "type": "boolean",
-          "default": false
+          "description": "Whether the mob will spawn angry or not, i.e. wolves."
         },
         "PreventSlimeSplit": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Size": {
-          "description": "Sets the size of slimes, magma cubes, and phantoms.\nCan get VERY big and get exponentially larger with each increase.\nExtremely high size will cause server lag and possibly crashes",
           "type": [
-            "string",
-            "number"
+            "number",
+            "string"
           ],
-          "default": 1
+          "description": "Sets the size of slimes, magma cubes, and phantoms. Can get VERY big and get exponentially larger with each increase. Extremely high size will cause server lag and possibly crashes"
         },
         "CanJoinRaid": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "PatrolLeader": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PatrolSpawnPoint": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Tameable": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "PreventConversion": {
-          "description": "Prevent a Skeleton or Zombie from being converted into other types of skeletons.",
           "type": "boolean",
-          "default": false
+          "description": "Prevent a Skeleton or Zombie from being converted into other types of skeletons."
         },
         "ReinforcementsChance": {
-          "type": "number",
-          "default": 0
+          "type": "number"
         },
         "CanMove": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "CanTick": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "HasArms": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "HasBasePlate": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "HasGravity": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "ItemBody": {
-          "description": "Designates the Mythic Item that should go in the body/chest slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the body/chest slot of an armor stand."
         },
         "ItemFeet": {
-          "description": "Designates the Mythic Item that should go in the feet slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the feet slot of an armor stand."
         },
         "ItemHand": {
-          "description": "Designates the Mythic Item that should go in the main hand slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the main hand slot of an armor stand."
         },
         "ItemOffHand": {
-          "description": "Designates the Mythic Item that should go in the off hand slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the off hand slot of an armor stand."
         },
         "ItemHead": {
-          "description": "Designates the Mythic Item that should go in the helmet slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the helmet slot of an armor stand."
         },
         "ItemLegs": {
-          "description": "Designates the Mythic Item that should go in the leggings slot of an armor stand.",
-          "type": "string"
+          "type": "string",
+          "description": "Designates the Mythic Item that should go in the leggings slot of an armor stand."
         },
         "Marker": {
-          "description": "Sets the armor stand as a marker. This option prevents the armor stand from being destroyed in game,\nmaking it completely non-interactable.",
           "type": "boolean",
-          "default": false
+          "description": "Sets the armor stand as a marker. This option prevents the armor stand from being destroyed in game, making it completely non-interactable."
         },
         "Small": {
-          "description": "Sets the armor stand to small variant.",
           "type": "boolean",
-          "default": false
+          "description": "Sets the armor stand to small variant."
         },
         "Pose": {
           "$ref": "#/definitions/Pose"
         },
         "Anger": {
-          "description": "Sets the time in ticks until bee anger ends. If set to 0 the bee will not be angry.",
           "type": "number",
-          "default": 0
+          "description": "Sets the time in ticks until bee anger ends. If set to 0 the bee will not be angry."
         },
         "HasNectar": {
-          "description": "Whether the bee is carrying pollen.",
           "type": "boolean",
-          "default": false
+          "description": "Whether the bee is carrying pollen."
         },
         "HasStung": {
-          "description": "Whether the bee has stung an entity.",
           "type": "boolean",
-          "default": false
+          "description": "Whether the bee has stung an entity."
         },
         "PreventStingerLoss": {
-          "description": "Whether to prevent the bee from losing its stinger once it hits an entity.",
           "type": "boolean",
-          "default": false
+          "description": "Whether to prevent the bee from losing its stinger once it hits an entity."
         }
       },
       "additionalProperties": false
+    },
+    "DyeColor": {
+      "type": "string",
+      "enum": [
+        "WHITE",
+        "ORANGE",
+        "MAGENTA",
+        "LIGHT_BLUE",
+        "YELLOW",
+        "LIME",
+        "PINK",
+        "GRAY",
+        "LIGHT_GRAY",
+        "CYAN",
+        "PURPLE",
+        "BLUE",
+        "BROWN",
+        "GREEN",
+        "RED",
+        "BLACK"
+      ]
     },
     "Pose": {
       "type": "object",
       "properties": {
         "Head": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         },
         "Body": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         },
         "LeftArm": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         },
         "RightArm": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         },
         "LeftLeg": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         },
         "RightLeg": {
-          "type": "string",
-          "default": "0,0,0"
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -726,12 +668,10 @@
       "type": "object",
       "properties": {
         "ThreatTable": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "ImmunityTable": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -764,64 +704,52 @@
       "type": "object",
       "properties": {
         "Id": {
-          "type": "string",
-          "default": ""
+          "type": "string"
         },
         "Nameplate": {
           "type": "string"
         },
         "Step": {
-          "type": "number",
-          "default": 0.5
+          "type": "number"
         },
         "ViewRadius": {
-          "type": "number",
-          "default": 0
+          "type": "number"
         },
         "Hitbox": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Invisible": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "DamageTint": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Drive": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Ride": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "LockPitch": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "LockYaw": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "Scale": {
-          "type": "number",
-          "default": 1
+          "type": "number"
         }
       },
-      "additionalProperties": false,
       "required": [
         "Id"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Nameplate": {
       "type": "object",
       "properties": {
         "Enabled": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "Offset": {
           "type": "number"
@@ -830,8 +758,8 @@
           "type": "number"
         },
         "Mounted": {
-          "description": "If set, forces the nameplate to work with modeled entities from the ModelEngine plugin",
-          "type": "boolean"
+          "type": "boolean",
+          "description": "If set, forces the nameplate to work with modeled entities from the ModelEngine plugin"
         }
       },
       "additionalProperties": false
@@ -840,8 +768,7 @@
       "type": "object",
       "properties": {
         "Enabled": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -850,16 +777,13 @@
       "type": "object",
       "properties": {
         "Item1": {
-          "type": "string",
-          "default": "5 EMERALD"
+          "type": "string"
         },
         "Item2": {
-          "type": "string",
-          "default": "5 DIAMOND"
+          "type": "string"
         },
         "Result": {
-          "type": "string",
-          "default": "DIAMOND_SWORD"
+          "type": "string"
         },
         "MaxUses": {
           "type": "number"
@@ -867,6 +791,5 @@
       },
       "additionalProperties": false
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

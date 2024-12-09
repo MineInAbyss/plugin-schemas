@@ -9,7 +9,7 @@ import {Model} from "./model";
 import {Hearing} from "./hearing";
 import {Trade} from "./trade";
 
-type Base = { [key: string]: Mob; }
+export type Base = { [key: string]: Mob; }
 
 /**
  * This string will be how your mob will be referenced internally in MythicMobs and can be any name you like.
