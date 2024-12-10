@@ -3,7 +3,6 @@ export type geary$entity = string;
 export type geary$uuid = string;
 export type geary$prefab_key = string;
 export class Base {
-    "entity"?: geary$entity;
     "uuid"?: geary$uuid;
     "location"?: geary$location;
     "itemRightClickBlock"?: geary$item_right_click_block;
@@ -36,7 +35,6 @@ export class Base {
     "itemInteract"?: geary$item_interact;
     "observe"?: geary$observe;
     "prevent.interaction"?: geary$prevent$interaction;
-    "spawnCategory"?: geary$spawn_category;
     "bind.entityType"?: geary$bind$entity_type;
     "sendActionBar"?: geary$send_action_bar;
     "maxNearby"?: geary$max_nearby;
@@ -44,9 +42,7 @@ export class Base {
     "itemDrop"?: geary$item_drop;
     "onLoad"?: geary$on_load;
     "playSound"?: geary$play_sound;
-    "spawnType"?: geary$spawn_type;
     "gap"?: geary$gap;
-    "eval"?: geary$eval;
     "set.potionMixes"?: geary$set$potion_mixes;
     "replaceBurnedDrop"?: geary$replace_burned_drop;
     "backpackContents"?: geary$backpack_contents;
@@ -121,13 +117,6 @@ export class Base {
     "chatty:spyOnChannels"?: chatty$spy_on_channels;
     "chatty:hideJoinLeave"?: chatty$hide_join_leave;
     "chatty:nickname"?: chatty$nickname;
-    "climb:staminaModifier"?: climb$stamina_modifier;
-    "bonfire:bonfireRemoved"?: bonfire$bonfire_removed;
-    "bonfire:effectArea"?: bonfire$effect_area;
-    "bonfire:bonfireRespawn"?: bonfire$bonfire_respawn;
-    "bonfire:bonfire"?: bonfire$bonfire;
-    "bonfire:expirationTime"?: bonfire$expiration_time;
-    "bonfire:bonfireDebug"?: bonfire$bonfire_debug;
     "minecraft:constant"?: minecraft$constant;
     "mineinabyss:showDepthmeterHud"?: mineinabyss$show_depthmeter_hud;
     "mineinabyss:toggleDepthHud"?: mineinabyss$toggle_depth_hud;
@@ -169,8 +158,8 @@ export class Base {
     "mineinabyss:descentContext"?: mineinabyss$descent_context;
     "mineinabyss:customHudData"?: mineinabyss$custom_hud_data;
     "mineinabyss:playerData"?: mineinabyss$player_data;
-    "cosmetics:equippedBackpackStorage"?: cosmetics$equipped_backpack_storage;
     "mineinabyss:showStarcompassHud"?: mineinabyss$show_starcompass_hud;
+    "cosmetics:equippedBackpackStorage"?: cosmetics$equipped_backpack_storage;
     "minecraft:binomial"?: minecraft$binomial;
     "mineinabyss:showDepth"?: mineinabyss$show_depth;
     "mineinabyss:gondola"?: mineinabyss$gondola;
@@ -178,9 +167,15 @@ export class Base {
     "mineinabyss:orthcoin"?: mineinabyss$orthcoin;
     "mineinabyss:okiboTraveler"?: mineinabyss$okibo_traveler;
     "mineinabyss:cosmetics"?: mineinabyss$cosmetics;
+    "climb:staminaModifier"?: climb$stamina_modifier;
+    "bonfire:bonfireRemoved"?: bonfire$bonfire_removed;
+    "bonfire:effectArea"?: bonfire$effect_area;
+    "bonfire:bonfireRespawn"?: bonfire$bonfire_respawn;
+    "bonfire:bonfire"?: bonfire$bonfire;
+    "bonfire:expirationTime"?: bonfire$expiration_time;
+    "bonfire:bonfireDebug"?: bonfire$bonfire_debug;
 }
 class BaseOrString {
-    "entity"?: geary$entity | string;
     "uuid"?: geary$uuid | string;
     "location"?: geary$location | string;
     "itemRightClickBlock"?: geary$item_right_click_block | string;
@@ -213,7 +208,6 @@ class BaseOrString {
     "itemInteract"?: geary$item_interact | string;
     "observe"?: geary$observe | string;
     "prevent.interaction"?: geary$prevent$interaction | string;
-    "spawnCategory"?: geary$spawn_category | string;
     "bind.entityType"?: geary$bind$entity_type | string;
     "sendActionBar"?: geary$send_action_bar | string;
     "maxNearby"?: geary$max_nearby | string;
@@ -221,9 +215,7 @@ class BaseOrString {
     "itemDrop"?: geary$item_drop | string;
     "onLoad"?: geary$on_load | string;
     "playSound"?: geary$play_sound | string;
-    "spawnType"?: geary$spawn_type | string;
     "gap"?: geary$gap | string;
-    "eval"?: geary$eval | string;
     "set.potionMixes"?: geary$set$potion_mixes | string;
     "replaceBurnedDrop"?: geary$replace_burned_drop | string;
     "backpackContents"?: geary$backpack_contents | string;
@@ -298,13 +290,6 @@ class BaseOrString {
     "chatty:spyOnChannels"?: chatty$spy_on_channels | string;
     "chatty:hideJoinLeave"?: chatty$hide_join_leave | string;
     "chatty:nickname"?: chatty$nickname | string;
-    "climb:staminaModifier"?: climb$stamina_modifier | string;
-    "bonfire:bonfireRemoved"?: bonfire$bonfire_removed | string;
-    "bonfire:effectArea"?: bonfire$effect_area | string;
-    "bonfire:bonfireRespawn"?: bonfire$bonfire_respawn | string;
-    "bonfire:bonfire"?: bonfire$bonfire | string;
-    "bonfire:expirationTime"?: bonfire$expiration_time | string;
-    "bonfire:bonfireDebug"?: bonfire$bonfire_debug | string;
     "minecraft:constant"?: minecraft$constant | string;
     "mineinabyss:showDepthmeterHud"?: mineinabyss$show_depthmeter_hud | string;
     "mineinabyss:toggleDepthHud"?: mineinabyss$toggle_depth_hud | string;
@@ -346,8 +331,8 @@ class BaseOrString {
     "mineinabyss:descentContext"?: mineinabyss$descent_context | string;
     "mineinabyss:customHudData"?: mineinabyss$custom_hud_data | string;
     "mineinabyss:playerData"?: mineinabyss$player_data | string;
-    "cosmetics:equippedBackpackStorage"?: cosmetics$equipped_backpack_storage | string;
     "mineinabyss:showStarcompassHud"?: mineinabyss$show_starcompass_hud | string;
+    "cosmetics:equippedBackpackStorage"?: cosmetics$equipped_backpack_storage | string;
     "minecraft:binomial"?: minecraft$binomial | string;
     "mineinabyss:showDepth"?: mineinabyss$show_depth | string;
     "mineinabyss:gondola"?: mineinabyss$gondola | string;
@@ -355,6 +340,13 @@ class BaseOrString {
     "mineinabyss:orthcoin"?: mineinabyss$orthcoin | string;
     "mineinabyss:okiboTraveler"?: mineinabyss$okibo_traveler | string;
     "mineinabyss:cosmetics"?: mineinabyss$cosmetics | string;
+    "climb:staminaModifier"?: climb$stamina_modifier | string;
+    "bonfire:bonfireRemoved"?: bonfire$bonfire_removed | string;
+    "bonfire:effectArea"?: bonfire$effect_area | string;
+    "bonfire:bonfireRespawn"?: bonfire$bonfire_respawn | string;
+    "bonfire:bonfire"?: bonfire$bonfire | string;
+    "bonfire:expirationTime"?: bonfire$expiration_time | string;
+    "bonfire:bonfireDebug"?: bonfire$bonfire_debug | string;
 }
 type BaseSerializableItemStack = SerializableItemStack | string;
 
@@ -532,8 +524,6 @@ export enum Operation {
     ADD_SCALAR = "ADD_SCALAR",
     MULTIPLY_SCALAR_1 = "MULTIPLY_SCALAR_1",
 }
-
-export type Any = any;
 
 export interface geary$location {
     world?: string;
@@ -2532,9 +2522,9 @@ export interface geary$get_target_block {
     maxDistance: Any;
 }
 
-export type geary$when = Base[];
+export type Any = any;
 
-export type geary$ensure = Base;
+export type geary$when = Base[];
 
 export type geary$action_group = Base[];
 
@@ -2590,7 +2580,9 @@ export interface geary$deny_in_vanilla_recipes {
 export interface geary$item_interact {
 }
 
-export type geary$observe = { [key: string]: ActionBase[] };
+export type geary$observe = { [key: string]: ActionBase[] }
+
+export type ULong = any;
 
 export interface geary$prevent$interaction {
     type?: InteractionType[];
@@ -2600,8 +2592,6 @@ export enum InteractionType {
     ATTACK = "ATTACK",
     RIGHT_CLICK = "RIGHT_CLICK",
 }
-
-export type geary$spawn_category = string;
 
 export type geary$bind$entity_type = string;
 
@@ -2631,11 +2621,7 @@ export interface geary$play_sound {
     pitch?: Any;
 }
 
-export type geary$spawn_type = string;
-
 export type geary$gap = string;
-
-export type geary$eval = string;
 
 export interface geary$set$potion_mixes {
     result?: BaseSerializableItemStack | null;
@@ -4336,6 +4322,8 @@ export interface geary$block_above {
     deny?: string[];
 }
 
+export type geary$ensure = Base;
+
 export interface geary$sounds {
     step?: geary$sound | null;
     ambient?: geary$sound | null;
@@ -4369,17 +4357,17 @@ export enum SoundCategory {
 }
 
 export interface geary$resourcepack {
-    baseMaterial: string;
+    baseMaterial?: string | null;
     model?: string | null;
     parentModel?: string;
     textures?: ModelTexturesSurrogate;
-    itemPredicates: ItemPredicates;
+    itemPredicates?: ItemPredicates;
 }
 
 export type ModelTexturesSurrogate = any;
 
 export interface ItemPredicates {
-    customModelData: number;
+    customModelData?: number | null;
     blockingModel?: string | null;
     blockingTexture?: string | null;
     brokenModel?: string | null;
@@ -4481,7 +4469,7 @@ export type geary$instances = { [key: string]: Base };
 export type geary$passive = SystemBind[];
 
 export interface SystemBind {
-    match: string[];
+    match: ULong[];
     every?: string;
     run: Base[];
 }
@@ -4865,7 +4853,6 @@ export interface GithubDownload {
 }
 
 export type LoadTrigger =
-    | LoadTrigger.BetterHud
     | LoadTrigger.Crucible
     | LoadTrigger.ModelEngine
     | LoadTrigger.None
@@ -4873,15 +4860,10 @@ export type LoadTrigger =
 
 export namespace LoadTrigger {
     export enum Type {
-        BetterHud = "BetterHud",
         Crucible = "Crucible",
         ModelEngine = "ModelEngine",
         None = "None",
         Oraxen = "Oraxen",
-    }
-
-    export interface BetterHud {
-        type: LoadTrigger.Type.BetterHud;
     }
 
     export interface Crucible {
@@ -4921,51 +4903,6 @@ export interface chatty$hide_join_leave {
 
 export interface chatty$nickname {
     nickname: string;
-}
-
-export interface climb$stamina_modifier {
-    modifier: number;
-    operation: ModifierOperation;
-}
-
-export enum ModifierOperation {
-    ADD = "ADD",
-    MULTIPLY_BASE = "MULTIPLY_BASE",
-    MULTIPLY = "MULTIPLY",
-}
-
-export interface bonfire$bonfire_removed {
-}
-
-export interface bonfire$effect_area {
-    uuid: string;
-}
-
-export interface bonfire$bonfire_respawn {
-    bonfireUuid: string;
-    bonfireLocation: Location;
-}
-
-export interface bonfire$bonfire {
-    bonfireOwner?: string | null;
-    bonfirePlayers?: string[];
-    maxPlayerCount?: number;
-    bonfireExpirationTime?: string;
-    states: BonfireStates;
-}
-
-export interface BonfireStates {
-    unlit: string;
-    lit: string;
-    set: string;
-}
-
-export interface bonfire$expiration_time {
-    totalUnlitTime: string;
-    lastUnlitTimeStamp: number;
-}
-
-export interface bonfire$bonfire_debug {
 }
 
 export interface minecraft$constant {
@@ -5344,11 +5281,11 @@ export interface mineinabyss$player_data {
     replant?: boolean;
 }
 
-export interface cosmetics$equipped_backpack_storage {
-    backpack: string;
+export interface mineinabyss$show_starcompass_hud {
 }
 
-export interface mineinabyss$show_starcompass_hud {
+export interface cosmetics$equipped_backpack_storage {
+    backpack: string;
 }
 
 export interface minecraft$binomial {
@@ -5379,7 +5316,54 @@ export interface mineinabyss$cosmetics {
     gesture?: string;
     cosmeticBackpack?: string | null;
 }
+
+export interface climb$stamina_modifier {
+    modifier: number;
+    operation: ModifierOperation;
+}
+
+export enum ModifierOperation {
+    ADD = "ADD",
+    MULTIPLY_BASE = "MULTIPLY_BASE",
+    MULTIPLY = "MULTIPLY",
+}
+
+export interface bonfire$bonfire_removed {
+}
+
+export interface bonfire$effect_area {
+    uuid: string;
+}
+
+export interface bonfire$bonfire_respawn {
+    bonfireUuid: string;
+    bonfireLocation: Location;
+}
+
+export interface bonfire$bonfire {
+    bonfireOwner?: string | null;
+    bonfirePlayers?: string[];
+    maxPlayerCount?: number;
+    bonfireExpirationTime?: string;
+    states: BonfireStates;
+    addons?: string[];
+}
+
+export interface BonfireStates {
+    unlit: string;
+    lit: string;
+    set: string;
+}
+
+export interface bonfire$expiration_time {
+    totalUnlitTime: string;
+    lastUnlitTimeStamp: number;
+}
+
+export interface bonfire$bonfire_debug {
+}
 class ActionBase extends Base {
     register?: string;
     loop?: string;
+    eval?: string;
 }

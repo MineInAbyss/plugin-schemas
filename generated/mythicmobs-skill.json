@@ -1,65 +1,65 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/Base",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/definitions/Skill"
+  },
   "definitions": {
-    "Base": {
+    "Skill": {
+      "description": "A Metaskill is, in essence, a list of mechanics to execute once the metaskill is called via a Meta Mechanic.\nThey are located in ./plugins/MythicMobs/Skills inside .yml files, just like their mobs counterpart.\n\nSee https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Skills/Metaskills",
       "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "Conditions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The Conditions of the metaskill. Those conditions evaluates the caster of the metaskill.\n\nDepending on the Condition Action used in each condition, different behaviors can occur: read the relevant wiki page for more info"
-          },
-          "Cooldown": {
-            "type": "number",
-            "description": "The Cooldown is the time, in seconds, that must elapse between executions of the metaskill for the same caster."
-          },
-          "Skills": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The true core of a metaskill. It's the list of the mechanics that will be executed by the metaskill once triggered. Other Meta Mechanics can be used in here, allowing the Metaskill to trigger other ones.\n\nEx. - skill{s=ExampleSkill_2}"
-          },
-          "CancelIfNoTargets": {
-            "type": "boolean",
-            "description": "If the metaskill should cancel its execution if no eligible targets are provided to it.",
-            "default": true
-          },
-          "TargetConditions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The Target Conditions of the metaskill. Those conditions evaluates the inherited target of the metaskill, it being either an entity ot a location.\n\nDepending on the Condition Action used in each condition, different behaviors can occur: read the relevant wiki page for more info"
-          },
-          "TriggerConditions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The Trigger Conditions of the metaskill. Those conditions evaluates the entity that triggered the skilltree. This entity can also be targeted via the"
-          },
-          "OnCooldownSkill": {
-            "type": "string",
-            "description": "If the Metaskill is triggered while on cooldown, the skill specified here will be casted instead."
-          },
-          "OnFailSkill": {
-            "type": "string",
-            "description": "The Metaskill to be executed if the conditions do not check"
-          },
-          "Skill": {
-            "type": "string",
-            "description": "To not be confused with Skills. This option allows the metaskill to execute the mechanics of another metaskill once triggered."
+      "properties": {
+        "Conditions": {
+          "description": "The Conditions of the metaskill. Those conditions evaluates the caster of the metaskill.\n\nDepending on the Condition Action used in each condition, different behaviors can occur: read the relevant wiki page for more info",
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
-        "additionalProperties": false,
-        "description": "A Metaskill is, in essence, a list of mechanics to execute once the metaskill is called via a Meta Mechanic. They are located in ./plugins/MythicMobs/Skills inside .yml files, just like their mobs counterpart.\n\nSee https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Skills/Metaskills"
-      }
+        "Cooldown": {
+          "description": "The Cooldown is the time, in seconds, that must elapse between executions of the metaskill for the same caster.",
+          "type": "number"
+        },
+        "Skills": {
+          "description": "The true core of a metaskill. It's the list of the mechanics that will be executed by the metaskill once triggered.\nOther Meta Mechanics can be used in here, allowing the Metaskill to trigger other ones.\n\nEx. - skill{s=ExampleSkill_2}",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancelIfNoTargets": {
+          "description": "If the metaskill should cancel its execution if no eligible targets are provided to it.",
+          "default": true,
+          "type": "boolean"
+        },
+        "TargetConditions": {
+          "description": "The Target Conditions of the metaskill. Those conditions evaluates the inherited target of the metaskill, it being either an entity ot a location.\n\nDepending on the Condition Action used in each condition, different behaviors can occur: read the relevant wiki page for more info",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "TriggerConditions": {
+          "description": "The Trigger Conditions of the metaskill. Those conditions evaluates the entity that triggered the skilltree. This entity can also be targeted via the",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "OnCooldownSkill": {
+          "description": "If the Metaskill is triggered while on cooldown, the skill specified here will be casted instead.",
+          "type": "string"
+        },
+        "OnFailSkill": {
+          "description": "The Metaskill to be executed if the conditions do not check",
+          "type": "string"
+        },
+        "Skill": {
+          "description": "To not be confused with Skills. This option allows the metaskill to execute the mechanics of another metaskill once triggered.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
