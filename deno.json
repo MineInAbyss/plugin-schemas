@@ -1,5 +1,8 @@
 {
-  "imports": {
-    "typescript-json-schema": "npm:typescript-json-schema@^0.65.1"
-  }
+    "imports": {
+        "typescript-json-schema": "npm:typescript-json-schema@^0.65.1"
+    },
+    "fmt": {
+        "indentWidth": 4
+    }
 }

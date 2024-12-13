@@ -127,6 +127,13 @@
           ],
           "type": "string"
         },
+        "Prefabs": {
+          "description": "A list of Geary prefabs to associate with the mob.\n\n(Requires Geary to be installed)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Template": {
           "description": "Templates are a functionality that allows a mob to \"inherit\" the characteristics of one or more other mobs.",
           "type": "string"
@@ -339,10 +346,12 @@
       "type": "object",
       "properties": {
         "ReviveHealth": {
+          "description": "When the mob's death event gets cancelled (via a Cancelevent mechanic ~onDeath)\nthe one specified is the amount of health the mob's will be set to.\nIf the value is -1, the mob will heal to its own max health value.",
           "type": "number",
           "default": 10
         },
         "Invincible": {
+          "description": "Makes the mob completely invincible to all types of damage. This option cannot be changed by command skills.",
           "type": "boolean",
           "default": false
         },
@@ -351,20 +360,16 @@
           "default": false
         },
         "Despawn": {
+          "description": "Determines how the mob will despawn.\nNORMAL mimics vanilla behavour,\nNEVER will save mobs but remove them with commands,\nPERSISTENT will save mobs and not remove them with commands.",
+          "default": "NORMAL",
           "enum": [
             "CHUNK",
             "NEVER",
             "NORMAL",
             "NPC",
-            "PERSISTENT",
-            false,
-            true
+            "PERSISTENT"
           ],
-          "default": true
-        },
-        "Persistent": {
-          "type": "boolean",
-          "default": false
+          "type": "string"
         },
         "MovementSpeed": {
           "type": "number"
@@ -373,7 +378,9 @@
           "type": "number"
         },
         "KnockbackResistance": {
-          "type": "number"
+          "description": "A percentage of knockback resisted from attacks. This option can be anywhere between 0 and 1.\nBut a mob with 100% knockback resistance can still be knocked back by a bow's enchantment: ARROW_KNOCKBACK (punch enchantment).\nFor true knockback resistance, see the velocity mechanic page.",
+          "type": "number",
+          "default": 0
         },
         "FollowRange": {
           "description": "The range in blocks within which a mob will target to attack or track an entity",
@@ -384,6 +391,7 @@
           "type": "number"
         },
         "Scale": {
+          "description": "The scale of the mob. If set to -1, the option is ignored.",
           "type": "number"
         },
         "Glowing": {
@@ -411,6 +419,7 @@
           "default": false
         },
         "HealOnReload": {
+          "description": "Allows non-despawning mobs to heal once the chunk they are in gets reloaded.",
           "type": "boolean",
           "default": false
         },
@@ -419,6 +428,7 @@
           "default": 10
         },
         "LockPitch": {
+          "description": "Keeps the mob's head from looking up/down. Requires ProtocolLib.",
           "type": "boolean",
           "default": false
         },
@@ -433,6 +443,7 @@
           "default": 64
         },
         "MaxCombatDistance": {
+          "description": "Prevents players that are a number of blocks away from damaging the mob.\nSetting this option to a number less than the distance of a certain mob skill or attack will\nensure that the mob can damage the player and will not be as easy to exploit.",
           "type": "number",
           "default": 256
         },
@@ -460,6 +471,7 @@
           "type": "boolean"
         },
         "PreventOtherDrops": {
+          "description": "Prevents the mob from dropping its vanilla loot table",
           "type": "boolean"
         },
         "PreventRandomEquipment": {
@@ -467,6 +479,7 @@
           "default": false
         },
         "PreventLeashing": {
+          "description": "Whether to prevent a leash from being placed on the mob.",
           "type": "boolean",
           "default": true
         },
@@ -515,6 +528,7 @@
           "default": true
         },
         "PreventMobKillDrops": {
+          "description": "Prevents a MythicMob's target from dropping loot.",
           "type": "boolean",
           "default": false
         },
@@ -544,8 +558,25 @@
           "default": true
         },
         "DigOutOfGround": {
+          "description": "Teleports the mob two blocks up if it takes SUFFOCATION damage.",
           "type": "boolean",
           "default": false
+        },
+        "BoatType": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "number"
+        },
+        "AgeLock": {
+          "type": "boolean",
+          "default": false
+        },
+        "Adult": {
+          "type": "boolean"
+        },
+        "Baby": {
+          "type": "boolean"
         },
         "Color": {
           "description": "Sets the color of the mob (wool color of sheep or the collar color of wolves)\nThe value can be any of this Colors",

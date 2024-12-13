@@ -9,7 +9,7 @@ import {Model} from "./model";
 import {Hearing} from "./hearing";
 import {Trade} from "./trade";
 
-export type Base = { [key: string]: Mob; }
+export type Base = { [key: string]: Mob };
 
 /**
  * This string will be how your mob will be referenced internally in MythicMobs and can be any name you like.
@@ -21,6 +21,13 @@ interface Mob {
      * A complete list of available entity types can be found on spigot javadocs, while here you can find a list of types that are explicitly implemented.
      */
     Type?: MythicEntityType;
+
+    /**
+     * A list of Geary prefabs to associate with the mob.
+     *
+     * (Requires Geary to be installed)
+     */
+    Prefabs?: string[];
 
     /**
      * Templates are a functionality that allows a mob to "inherit" the characteristics of one or more other mobs.
@@ -164,13 +171,13 @@ interface Mob {
      * Instead of using a lot of setvariable mechanics ~onSpawn, you can make a mob spawn with already set
      * variables via the use the of Variables mob field.
      */
-    Variables?: { [key: string]: string; };
+    Variables?: { [key: string]: string };
 
     /**
      * Customizes the villager trades.
      * Villagers must have a profession and a profession level of 2 to be able to keep its custom trades.
      */
-    Trades?: { [key: number]: Trade; };
+    Trades?: { [key: number]: Trade };
 
     /**
      * Spawn category for Geary's spawning system
