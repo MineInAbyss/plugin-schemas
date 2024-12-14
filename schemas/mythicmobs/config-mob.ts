@@ -30,6 +30,18 @@ interface Mob {
     Prefabs?: string[];
 
     /**
+     * Embedded Geary prefab definition to automatically inherit when this mob spawns.
+     * Will use its mob name for the prefab key.
+     */
+    Geary?: object;
+
+    /**
+     * Geary observe component for this mob.
+     * Will create a prefab if specified and override observe in 'Geary' parameter if specified there.
+     */
+    Observe?: object;
+
+    /**
      * Templates are a functionality that allows a mob to "inherit" the characteristics of one or more other mobs.
      */
     Template?: string;

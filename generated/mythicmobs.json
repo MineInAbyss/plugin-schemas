@@ -134,6 +134,18 @@
             "type": "string"
           }
         },
+        "Geary": {
+          "description": "Embedded Geary prefab definition to automatically inherit when this mob spawns.\nWill use its mob name for the prefab key.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true
+        },
+        "Observe": {
+          "description": "Geary observe component for this mob.\nWill create a prefab if specified and override observe in 'Geary' parameter if specified there.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true
+        },
         "Template": {
           "description": "Templates are a functionality that allows a mob to \"inherit\" the characteristics of one or more other mobs.",
           "type": "string"
